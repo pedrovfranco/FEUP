@@ -3,6 +3,14 @@
 
 using namespace std;
 
+template<class T>
+void print_vector(const vector<T> &input)
+{
+	for (int i = 0; i < input.size(); i++) {
+		cout << input[i] << ' ';
+	}
+}
+
 void troco(vector<int>& minimo, int restante, vector<int> curr, const vector<int> &moedas)
 {
 	if (restante == 0 && curr.size() < minimo.size())
@@ -24,7 +32,7 @@ void troco(vector<int>& minimo, int restante, vector<int> curr, const vector<int
 }
 
 
-int troco(int valor, vector<int> moedas)
+vector<int> troco(int valor, vector<int> moedas)
 {
 	vector<int> min;
 	min.resize(100);
@@ -32,7 +40,7 @@ int troco(int valor, vector<int> moedas)
 
 	troco(min, valor, curr, moedas);
 
-	return min.size();
+	return min;
 }
 
 
@@ -40,7 +48,7 @@ int main()
 {
 	cout << "\n";
 
-	cout << troco(8, {1,4,5});
+	print_vector(troco(40, {1,4,5}));
 
 	cout << "\n\n";
 	return 0;
