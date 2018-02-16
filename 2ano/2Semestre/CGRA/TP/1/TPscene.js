@@ -23,6 +23,7 @@ class TPscene extends CGFscene
 
         this.axis=new CGFaxis(this);
         this.obj = new MyObject(this);
+        this.mytriang = new MyTriangle(this);
 
 
         // NOTE: OpenGL transformation matrices are transposed
@@ -116,6 +117,7 @@ class TPscene extends CGFscene
         // ---- BEGIN Primitive drawing section
 
         this.obj.display();
+        this.mytriang.display();
         
         // ---- END Primitive drawing section
 
