@@ -24,7 +24,7 @@ void generateSave(int *save, const int &size, const int *coins, const int &numCo
       if (save[currentSum + coins[i]] == -1 || currentNumCoins+1 < save[currentSum + coins[i]])
       {
         save[currentSum + coins[i]] = currentNumCoins+1;
-        print_array(save, size);
+        print_array(save, size+1);
         generateSave(save, size, coins, numCoins, currentSum + coins[i], currentNumCoins+1);
       }
     }
@@ -35,7 +35,7 @@ void generateSave(int *save, const int &size, const int *coins, const int &numCo
 
 void getMin(int value, int coins[], int numCoins)
 {
-  int save[value];
+  int save[value+1];
 
   for (int i = 0; i < value; i++)
   {
