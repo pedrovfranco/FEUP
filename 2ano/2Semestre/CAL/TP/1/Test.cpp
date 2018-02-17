@@ -79,7 +79,10 @@ bool runAllTests(int argc, char const *argv[]) {
 int main(int argc, char const *argv[]) {
 
   int coins[3] = {1,4,5};
-  getMin(8, coins, 3);
 
-    // return runAllTests(argc, argv) ? EXIT_SUCCESS : EXIT_FAILURE;
+  cout << "\n";
+  cout << calcChange(stoi(argv[1]), 3, coins);
+  cout << "\n\n";
+
+  // return runAllTests(argc, argv) ? EXIT_SUCCESS : EXIT_FAILURE;
 }

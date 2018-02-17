@@ -3,6 +3,7 @@
  */
 
 #include "Change.h"
+#include <string>
 
 template<class T>
 void print_array(const T input[], const int &size)
@@ -14,40 +15,29 @@ void print_array(const T input[], const int &size)
   cout << "\n\n";
 }
 
-void generateSave(int *save, const int &size, const int *coins, const int &numCoins, int currentSum, int currentNumCoins)
+void generateSave(int &min, string currPath, string &minPath, const int &max, const int *coins, const int &numCoins, int currentSum, int currentNumCoins)
 {
 
   for (int i = 0; i < numCoins; i++)
   {
-    if (currentSum + coins[i] <= size)
+    if (currentSum + coins[i] == max && currentNumCoins+1 < min)
     {
-      if (save[currentSum + coins[i]] == -1 || currentNumCoins+1 < save[currentSum + coins[i]])
-      {
-        save[currentSum + coins[i]] = currentNumCoins+1;
-        print_array(save, size+1);
-        generateSave(save, size, coins, numCoins, currentSum + coins[i], currentNumCoins+1);
-      }
+      min = currentNumCoins+1;
+      minPath = currPath+(char)(coins[i]+'0')+";";
     }
 
+    if (currentSum + coins[i] <= max)
+      generateSave(min, (currPath + to_string(coins[i]) + ";"), minPath, max, coins, numCoins, currentSum + coins[i], currentNumCoins+1);
   }
 
-}
-
-void getMin(int value, int coins[], int numCoins)
-{
-  int save[value+1];
-
-  for (int i = 0; i < value; i++)
-  {
-    save[i] = -1; // MAX
-  }
-
-  generateSave(save, value, coins, numCoins, 0, 0);
 }
 
 string calcChange(int m, int numCoins, int *coinValues)
 {
-  int coins[3] = {1,4,5};
-  getMin(8, coins, 3);
-  return "";
+  int min = 999;
+  string minPath;
+
+  generateSave(min, "", minPath, m, coinValues, numCoins, 0, 0);
+
+  return minPath;
 }

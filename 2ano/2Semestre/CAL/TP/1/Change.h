@@ -17,7 +17,5 @@
  * */
 string calcChange(int m, int numCoins, int *coinValues);
 
-void getMin(int value, int coins[], int numCoins);
-
 
 #endif /* CHANGE_H_ */
