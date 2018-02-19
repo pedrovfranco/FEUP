@@ -103,16 +103,32 @@ class TPscene extends CGFscene
         
         // ---- END Background, camera and axis setup
 
+        this.pushMatrix();
+        
+        this.translate(0, 5, 0);
+        
+        this.obj.display();
+        this.mytriang.display();
+
+        this.popMatrix();
         
         // ---- BEGIN Geometric transformation section
 
         // Multiplication of the previous transformations
-        //this.multMatrix(this.tra);     // GT = GT * tra
+               
+        //this.multMatrix(this.sca);     // GT = GT * tra
+        this.scale(5, 2, 1);
+
+        //this.multMatrix(this.tra);     // GT = GT * sca
+        this.translate(5, 0, 2);
+
         //this.multMatrix(this.rot);     // GT = GT * rot
-        //this.multMatrix(this.sca);     // GT = GT * sca
+        //this.rotate(Math.PI/6, 0, 1, 0);
+
 
         // ---- END Geometric transformation section
         
+
 
         // ---- BEGIN Primitive drawing section
 
