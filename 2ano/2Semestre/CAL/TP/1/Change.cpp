@@ -34,10 +34,21 @@ void generateSave(int &min, string currPath, string &minPath, const int &max, co
 
 string calcChange(int m, int numCoins, int *coinValues)
 {
+  if (m == 0)
+    return "";
+  
+  if (coinValues[0] > m)
+    return "-";
+
   int min = 999;
   string minPath;
 
   generateSave(min, "", minPath, m, coinValues, numCoins, 0, 0);
+
+  for (int i = 0; i < minPath.length()/2; ++i)
+  {
+    swap(minPath[i], minPath[minPath.length() - i - 2]);
+  }
 
   return minPath;
 }

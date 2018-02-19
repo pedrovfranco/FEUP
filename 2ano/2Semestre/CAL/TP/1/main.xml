@@ -1,5 +1,6 @@
 <testsuites>
-	<testsuite name="AllTests" tests="1">
+	<testsuite name="AllTests" tests="2">
 		<testcase classname="AllTests" name="factorialTest"/>
+		<testcase classname="AllTests" name="calcChangeTest"/>
 	</testsuite>
 </testsuites>
