@@ -22,19 +22,25 @@ int a(int argc, char const *argv[])
 			break;
 	}
 
+	close(fd);
+
 	return 0;
 }
 
 int b(int argc, char const *argv[])
 {
-	int fd1 = open(argv[1], O_RDONLY);
+	int fd2 = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT);
 
-	int fd2 = open(argv[2], O_WRONLY);
+	if (fd2 < 0)
+		return 2;
 
 	if (dup2(fd2, STDOUT_FILENO) < 0)
-		return 1;
+		return 3;
 
-	return a(argc, argv);
+	int ret = a(argc, argv);
+	close(f2);
+
+	return ret;
 }
 
 int main(int argc, char const *argv[])
