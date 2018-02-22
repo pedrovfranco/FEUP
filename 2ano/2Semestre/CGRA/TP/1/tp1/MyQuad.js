@@ -1,10 +1,10 @@
 /**
- * MyObject
+ * MyQuad
  * @param gl {WebGLRenderingContext}
  * @constructor
  */
 
-class MyObject extends CGFobject
+class MyQuad extends CGFobject
 {
 	constructor(scene) 
 	{
@@ -31,27 +31,3 @@ class MyObject extends CGFobject
 	};
 };
 
-class MyTriangle extends CGFobject
-{
-	constructor(scene) 
-	{
-		super(scene);
-		this.initBuffers();
-	};
-
-	initBuffers() 
-	{
-		this.vertices = [
-				-1, 0.5, 0,
-				1, 0.5, 0,
-				0, 1.5, 0,
-				];
-
-		this.indices = [
-				0, 1, 2,
-			];
-			
-		this.primitiveType=this.scene.gl.TRIANGLES;
-		this.initGLBuffers();
-	};
-};

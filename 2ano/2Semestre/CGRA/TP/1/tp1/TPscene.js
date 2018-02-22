@@ -23,7 +23,9 @@ class TPscene extends CGFscene
 
         this.axis=new CGFaxis(this);
         this.obj = new MyObject(this);
-        this.mytriang = new MyTriangle(this);
+        this.obj2 = new MyObject2(this);
+        this.cube = new MyUnitCube(this);
+        this.cube2 = new MyUnitCubeQuad(this);
 
 
         // NOTE: OpenGL transformation matrices are transposed
@@ -76,7 +78,7 @@ class TPscene extends CGFscene
     setDefaultAppearance() 
     {
         this.setAmbient(0.2, 0.4, 0.8, 1.0);
-        this.setDiffuse(0.2, 0.4, 0.8, 1.0);
+        this.setDiffuse(0.0, 0.8, 0.8, 1.0);
         this.setSpecular(0.2, 0.4, 0.8, 1.0);
         this.setShininess(10.0);	
     };
@@ -100,43 +102,14 @@ class TPscene extends CGFscene
         this.axis.display();
 
         this.setDefaultAppearance();
+
+
+        this.cube.display();
+        this.translate(2,0,0);
+        this.cube2.display();
+     
         
-        // ---- END Background, camera and axis setup
-
-        this.pushMatrix();
-        
-        this.translate(0, 5, 0);
-        
-        this.obj.display();
-        this.mytriang.display();
-
-        this.popMatrix();
-        
-        // ---- BEGIN Geometric transformation section
-
-        // Multiplication of the previous transformations
-               
-        //this.multMatrix(this.sca);     // GT = GT * tra
-        this.scale(5, 2, 1);
-
-        //this.multMatrix(this.tra);     // GT = GT * sca
-        this.translate(5, 0, 2);
-
-        //this.multMatrix(this.rot);     // GT = GT * rot
-        //this.rotate(Math.PI/6, 0, 1, 0);
-
-
-        // ---- END Geometric transformation section
-        
-
-
-        // ---- BEGIN Primitive drawing section
-
-        this.obj.display();
-        this.mytriang.display();
-        
-        // ---- END Primitive drawing section
-
+   
     };
 
 };
