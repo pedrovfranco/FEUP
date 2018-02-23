@@ -1,6 +1,10 @@
 <testsuites>
 	<testsuite name="AllTests" tests="2">
 		<testcase classname="AllTests" name="factorialTest"/>
-		<testcase classname="AllTests" name="calcChangeTest"/>
+		<testcase classname="AllTests" name="calcChangeTest">
+			<failure message="Test.cpp:26 calcChangeTest: &quot;5;&quot; == calcChange(5, numCoins, coinValues) expected:	5;	but was:	hey	">
+calcChangeTest: &quot;5;&quot; == calcChange(5, numCoins, coinValues) expected:	5;	but was:	hey	
+			</failure>
+		</testcase>
 	</testsuite>
 </testsuites>

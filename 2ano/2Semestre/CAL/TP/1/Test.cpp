@@ -78,11 +78,11 @@ bool runAllTests(int argc, char const *argv[]) {
 
 int main(int argc, char const *argv[]) {
 
-  // int coins[3] = {1,4,5};
+  int coins[3] = {1,4,5};
 
-  // cout << "\n";
-  // cout << calcChange(stoi(argv[1]), 3, coins);
-  // cout << "\n\n";
+  cout << "\n";
+  cout << calcChange(stoi(argv[1]), 3, coins);
+  cout << "\n\n";
 
-  return runAllTests(argc, argv) ? EXIT_SUCCESS : EXIT_FAILURE;
+  // return runAllTests(argc, argv) ? EXIT_SUCCESS : EXIT_FAILURE;
 }
