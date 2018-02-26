@@ -69,20 +69,30 @@ bool runAllTests(int argc, char const *argv[]) {
     s.push_back(CUTE(calcChangeTest));
     // s.push_back(CUTE(calcSumArrayTest));
     // s.push_back(CUTE(partitioningTest));
-	cute::xml_file_opener xmlfile(argc, argv);
-	cute::xml_listener<cute::ide_listener<>> lis(xmlfile.out);
-	auto runner = cute::makeRunner(lis, argc, argv);
-	bool success = runner(s, "AllTests");
-	return success;
+    cute::xml_file_opener xmlfile(argc, argv);
+    cute::xml_listener<cute::ide_listener<>> lis(xmlfile.out);
+    auto runner = cute::makeRunner(lis, argc, argv);
+    bool success = runner(s, "AllTests");
+    return success;
 }
 
 int main(int argc, char const *argv[]) {
 
-  int coins[3] = {1,4,5};
+	int coins[3] = {1,4,5};
 
-  // cout << "\n";
-  // cout << calcChange(stoi(argv[1]), 3, coins);
-  // cout << "\n\n";
+	clock_t begin = clock();
 
-  return runAllTests(argc, argv) ? EXIT_SUCCESS : EXIT_FAILURE;
+	cout << "\n";
+	calcChange(stoi(argv[1]), 3, coins);
+	cout << "\n\n";
+
+	clock_t end = clock();
+
+	float time_elapsed = (float)(end - begin) / CLOCKS_PER_SEC;
+
+	printf("\nTime spent: %f seconds\n\n", time_elapsed);
+
+	return 0;
+
+  // return runAllTests(argc, argv) ? EXIT_SUCCESS : EXIT_FAILURE;
 }

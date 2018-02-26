@@ -1,0 +1,11 @@
+Pretende-se armazenar informação sobre diversas praias fluviais espalhadas por todo o país.
+
+De cada praia pretende-se armazenar informações como nome, concelho onde se situa, a existencia de bandeira azul, capacidade, data de inauguração, coordenadas GPS, ratings e uma lista de serviços. Uma praia é do tipo rio ou albufeira.
+
+Do respetivo serviço é proveitoso saber nome, se está aberto, ratings e a data de encerramento.
+
+Da data quere-se saber o dia, o mês e o ano.
+
+O rating consiste numa avaliação de 0-10, um pequeno comentário e a data em que foi atribuido.
+
+Os pontos turisticos na proximidade de cada praia são recomendados por distância e por rating.

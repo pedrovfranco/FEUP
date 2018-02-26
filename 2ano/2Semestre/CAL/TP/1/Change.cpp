@@ -200,14 +200,15 @@ string calcChange(int m, int numCoins, int *coinValues)
    return "-";
    
    string minPath;
+   int ola;
 
-   vector<int> res = generateSave2(m, coinValues, numCoins).back();
+   generateSave(ola, "", minPath, m, coinValues, numCoins, 0, 0);
 
-   for (int i = 0; i < res.size(); ++i)
-   {
-      minPath.push_back(res[i] + '0');
-      minPath.push_back(';');
-   }
+   // for (int i = 0; i < res.size(); ++i)
+   // {
+   //    minPath.push_back(res[i] + '0');
+   //    minPath.push_back(';');
+   // }
 
    return minPath;
 }
