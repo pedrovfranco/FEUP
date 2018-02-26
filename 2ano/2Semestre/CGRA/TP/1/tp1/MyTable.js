@@ -22,7 +22,7 @@ class myLeg extends CGFobject
 	
 };
 
-class myTable extends CGFobject
+class MyTable extends CGFobject
 {
 	constructor(scene) 
 	{
@@ -71,12 +71,14 @@ class myTable extends CGFobject
 		this.leg.display();
 	
 		this.scene.popMatrix();
+
+
 	}
 	
 };
 
 
-class myFloor extends CGFobject
+class MyFloor extends CGFobject
 {
 	constructor(scene) 
 	{
@@ -87,6 +89,7 @@ class myFloor extends CGFobject
 
 	display()
 	{	
+		this.scene.scale(8,0.1,6);
 		this.cube.display();
 	}
 	

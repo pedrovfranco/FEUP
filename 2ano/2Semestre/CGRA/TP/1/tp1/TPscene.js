@@ -22,9 +22,8 @@ class TPscene extends CGFscene
         this.gl.depthFunc(this.gl.LEQUAL);
 
         this.axis=new CGFaxis(this);
-        this.obj = new MyObject(this);
-        this.obj2 = new MyObject2(this);
-        this.table = new myTable(this);
+        this.table = new MyTable(this);
+        this.floor = new MyFloor(this);
 
     };
 
@@ -71,10 +70,24 @@ class TPscene extends CGFscene
 
         this.setDefaultAppearance();
 
+        this.pushMatrix();
+
+        this.translate(4,0,3);
 
         this.table.display();
-     
+
+        this.popMatrix();
+
         
+        this.pushMatrix();
+
+        this.translate(4,0,3);
+
+        this.floor.display();
+
+        this.popMatrix();
+     
+
    
     };
 
