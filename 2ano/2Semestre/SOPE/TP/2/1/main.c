@@ -9,8 +9,9 @@
 int main(void)
 {
 	char password[MAX_PASSWORD_LENGTH+1], temp[] = "\nInsert password please: ";
+	
 	struct termios term;
-
+	
 	tcgetattr(STDIN_FILENO, &term);
 	term.c_lflag &= ~(ECHO | ICANON);
 	tcsetattr(STDIN_FILENO, TCSANOW, &term);
