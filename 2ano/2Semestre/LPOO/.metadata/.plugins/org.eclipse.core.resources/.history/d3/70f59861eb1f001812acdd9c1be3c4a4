@@ -1,0 +1,23 @@
+package recipes;
+
+public class SimpleIngredient
+{	
+	public SimpleIngredient(String name)
+	{
+		if (name == null)
+			throw new IllegalArgumentException();
+		this.name = name;
+	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (obj != null)
+		{
+			SimpleIngredient foo = (SimpleIngredient) obj;
+			return (this.name == foo.name);
+		}
+		
+		return false;
+	}
+}

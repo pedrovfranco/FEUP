@@ -1,0 +1,18 @@
+package recipes;
+
+public interface<T1, T2> Pair
+{
+	Object first;
+	Object second;
+	
+	public Pair(Object first, Object second)
+	{
+		if (first == null || second == null)
+			throw new IllegalArgumentException();
+		else
+		{
+			this.first = first;
+			this.second = second;
+		}
+	}
+}

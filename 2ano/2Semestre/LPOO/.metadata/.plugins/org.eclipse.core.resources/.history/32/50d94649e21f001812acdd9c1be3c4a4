@@ -1,0 +1,16 @@
+package recipes;
+
+public class SimpleIngredient
+{
+	private String name;
+	
+	public SimpleIngredient(String name)
+	{
+		this.name = name;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+}

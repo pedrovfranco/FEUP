@@ -1,0 +1,11 @@
+
+public class Pair
+{
+	Object first;
+	Object second;
+	
+	public Pair(Object first, Object second)
+	{
+		
+	}
+}

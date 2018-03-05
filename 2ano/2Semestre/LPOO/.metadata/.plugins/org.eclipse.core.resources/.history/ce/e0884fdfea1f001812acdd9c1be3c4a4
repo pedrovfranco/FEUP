@@ -1,0 +1,15 @@
+package recipes;
+
+public class OvenStep
+{
+	private String name;
+	private String action;
+	private int temperature;
+	
+	public OvenStep(String name, String action, int temperature)
+	{
+		this.name = name;
+		this.action = action;
+		this.temperature = temperature;
+	}
+}
