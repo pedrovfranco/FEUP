@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="18" version="2.0">
+<workbench progressCount="16" version="2.0">
 <workbenchAdvisor/>
 <window height="803" maximized="true" width="1147" x="392" y="111">
 <fastViewData fastViewLocation="1024"/>
@@ -12,7 +12,7 @@
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.debug.ui.launch.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="162" y="36"/>
-<coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="46" y="36"/>
+<coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="322" y="36"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="94" y="36"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="94" y="36"/>
@@ -20,6 +20,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="238" y="36"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -31,17 +32,32 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RecipesTests.java" partName="RecipesTests.java" path="/home/pedro/Desktop/git/FEUP/2ano/2Semestre/LPOO/MT2017/src/recipes/RecipesTests.java" title="RecipesTests.java" tooltip="MT2017/src/recipes/RecipesTests.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MT2017/src/recipes/RecipesTests.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3990" selectionTopPixel="1279"/>
+<editorState selectionHorizontalPixel="0" selectionLength="24" selectionOffset="7679" selectionTopPixel="2786"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RecipeStep.java" partName="RecipeStep.java" path="/home/pedro/Desktop/git/FEUP/2ano/2Semestre/LPOO/MT2017/src/recipes/RecipeStep.java" title="RecipeStep.java" tooltip="MT2017/src/recipes/RecipeStep.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Recipe.java" partName="Recipe.java" path="/home/pedro/Desktop/git/FEUP/2ano/2Semestre/LPOO/MT2017/src/recipes/Recipe.java" title="Recipe.java" tooltip="MT2017/src/recipes/Recipe.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MT2017/src/recipes/Recipe.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="510" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OvenStep.java" partName="OvenStep.java" path="/home/pedro/Desktop/git/FEUP/2ano/2Semestre/LPOO/MT2017/src/recipes/OvenStep.java" title="OvenStep.java" tooltip="MT2017/src/recipes/OvenStep.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MT2017/src/recipes/OvenStep.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="162" selectionOffset="453" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RecipeStep.java" partName="RecipeStep.java" path="/home/pedro/Desktop/git/FEUP/2ano/2Semestre/LPOO/MT2017/src/recipes/RecipeStep.java" title="RecipeStep.java" tooltip="MT2017/src/recipes/RecipeStep.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MT2017/src/recipes/RecipeStep.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="38" selectionOffset="1339" selectionTopPixel="540"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="463" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimpleIngredient.java" partName="SimpleIngredient.java" path="/home/pedro/Desktop/git/FEUP/2ano/2Semestre/LPOO/MT2017/src/recipes/SimpleIngredient.java" title="SimpleIngredient.java" tooltip="MT2017/src/recipes/SimpleIngredient.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MT2017/src/recipes/SimpleIngredient.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="125" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -95,11 +111,121 @@
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
+<view id="org.eclipse.debug.ui.DebugView" partName="Debug">
+<viewState/>
+</view>
 <view id="org.eclipse.jdt.junit.ResultView" partName="JUnit">
 <viewState failuresOnly="false" layout="1" orientation="2" ratio="500" scroll="false" time="true"/>
 </view>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
+<view id="org.eclipse.debug.ui.VariableView" partName="Variables">
+<viewState/>
+</view>
+<view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints">
+<viewState/>
+</view>
 </views>
 <perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.debug.internal.ui.DebugPerspectiveFactory" id="org.eclipse.debug.ui.DebugPerspective" label="Debug"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
+<show_view_action id="org.eclipse.debug.ui.DebugView"/>
+<show_view_action id="org.eclipse.debug.ui.VariableView"/>
+<show_view_action id="org.eclipse.debug.ui.BreakpointView"/>
+<show_view_action id="org.eclipse.debug.ui.ExpressionView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.jdt.debug.ui.DisplayView"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<view id="org.eclipse.jdt.junit.ResultView"/>
+<view id="org.eclipse.debug.ui.DebugView"/>
+<view id="org.eclipse.debug.ui.VariableView"/>
+<view id="org.eclipse.debug.ui.BreakpointView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="1434" ratioRight="478" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.74972314" ratioLeft="677" ratioRight="226" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<page content="org.eclipse.jdt.junit.ResultView" label="JUnit"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.debug.ui.DisplayView" label="LabelNotFound"/>
+<page content="org.eclipse.search.SearchResultView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.44903988" ratioLeft="304" ratioRight="373" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="1434" ratioRight="478" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="956" ratioRight="956" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
+<page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
+<page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
+<page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -117,6 +243,7 @@
 <alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
 <alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
 <alwaysOnActionSet id="org.eclipse.jdt.junit.JUnitActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
 <show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
 <show_view_action id="org.eclipse.jdt.ui.TypeHierarchy"/>
 <show_view_action id="org.eclipse.jdt.ui.SourceView"/>
@@ -147,15 +274,16 @@
 <new_wizard_action id="org.eclipse.jdt.junit.wizards.NewTestCaseCreationWizard"/>
 <perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
 <perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
-<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <view id="org.eclipse.jdt.junit.ResultView"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.jdt.ui.JavadocView"/>
 <view id="org.eclipse.jdt.ui.SourceView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.debug.ui.DebugView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars/>
 <layout>
@@ -187,6 +315,7 @@
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
@@ -195,6 +324,7 @@
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
@@ -216,159 +346,160 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT2017/src/recipes/RecipesTests.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT2017/src/recipes/Recipe.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT2017/src/recipes/OvenStep.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT2017/src/recipes/RecipeStep.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT2017/src/recipes/SimpleIngredient.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT2017/src/recipes/Ingredient.java"/>
 </editors>
 <item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="4046" y="0"/>
+<position info="not_deleted" x="7091" y="0"/>
+</item>
+<item historyLabel="RecipeStep.java" index="3">
+<position info="not_deleted" x="155" y="0"/>
 </item>
 <item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="5718" y="139"/>
+<position info="not_deleted" x="7100" y="0"/>
 </item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1166" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position/>
+<item historyLabel="Recipe.java" index="1">
+<position info="not_deleted" x="293" y="0"/>
 </item>
 <item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="5717" y="0"/>
+<position info="not_deleted" x="7100" y="0"/>
 </item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="358" y="0"/>
+<item historyLabel="Recipe.java" index="1">
+<position info="not_deleted" x="293" y="0"/>
 </item>
-<item historyLabel="SimpleIngredient.java" index="2">
+<item historyLabel="OvenStep.java" index="2">
+<position info="not_deleted" x="672" y="0"/>
+</item>
+<item historyLabel="RecipeStep.java" index="3">
+<position info="not_deleted" x="174" y="97"/>
+</item>
+<item historyLabel="OvenStep.java" index="2">
+<position info="not_deleted" x="672" y="0"/>
+</item>
+<item historyLabel="Recipe.java" index="1">
+<position info="not_deleted" x="273" y="0"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="7100" y="0"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="7199" y="0"/>
+</item>
+<item historyLabel="Recipe.java" index="1">
+<position info="not_deleted" x="273" y="0"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="7183" y="12"/>
+</item>
+<item historyLabel="Recipe.java" index="1">
+<position info="not_deleted" x="334" y="0"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="7183" y="12"/>
+</item>
+<item historyLabel="Recipe.java" index="1">
+<position info="not_deleted" x="350" y="0"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="7183" y="12"/>
+</item>
+<item historyLabel="Recipe.java" index="1">
+<position info="not_deleted" x="350" y="0"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="7225" y="7"/>
+</item>
+<item historyLabel="Recipe.java" index="1">
+<position info="not_deleted" x="293" y="0"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="6454" y="0"/>
+</item>
+<item historyLabel="RecipeStep.java" index="3">
+<position info="not_deleted" x="463" y="0"/>
+</item>
+<item historyLabel="Recipe.java" index="1">
+<position info="not_deleted" x="399" y="1"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="6837" y="0"/>
+</item>
+<item historyLabel="OvenStep.java" index="2">
+<position info="not_deleted" x="238" y="0"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="6837" y="0"/>
+</item>
+<item historyLabel="OvenStep.java" index="2">
+<position info="not_deleted" x="714" y="0"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="6837" y="0"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="7285" y="49"/>
+</item>
+<item historyLabel="OvenStep.java" index="2">
+<position info="not_deleted" x="714" y="0"/>
+</item>
+<item historyLabel="Recipe.java" index="1">
+<position info="not_deleted" x="399" y="1"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="7285" y="49"/>
+</item>
+<item historyLabel="Recipe.java" index="1">
+<position info="not_deleted" x="399" y="1"/>
+</item>
+<item historyLabel="OvenStep.java" index="2">
+<position info="not_deleted" x="453" y="162"/>
+</item>
+<item historyLabel="Recipe.java" index="1">
+<position info="not_deleted" x="399" y="1"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="7285" y="49"/>
+</item>
+<item historyLabel="Recipe.java" index="1">
+<position info="not_deleted" x="451" y="0"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="7285" y="49"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="7527" y="0"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="7690" y="3"/>
+</item>
+<item historyLabel="Recipe.java" index="1">
+<position info="not_deleted" x="503" y="0"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="7690" y="3"/>
+</item>
+<item historyLabel="Recipe.java" index="1">
+<position info="not_deleted" x="510" y="0"/>
+</item>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="7690" y="3"/>
+</item>
+<item historyLabel="SimpleIngredient.java" index="4">
 <position info="not_deleted" x="125" y="0"/>
 </item>
-<item historyLabel="Ingredient.java" index="3">
-<position info="not_deleted" x="176" y="0"/>
-</item>
-<item historyLabel="SimpleIngredient.java" index="2">
-<position info="not_deleted" x="125" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="358" y="0"/>
-</item>
-<item historyLabel="Ingredient.java" index="3">
-<position info="not_deleted" x="176" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position/>
+<item historyLabel="RecipesTests.java" index="0">
+<position info="not_deleted" x="7679" y="24"/>
 </item>
 <item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="7138" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position/>
+<position info="not_deleted" x="4312" y="19"/>
 </item>
 <item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="7138" y="0"/>
+<position info="not_deleted" x="7679" y="24"/>
 </item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1410" y="0"/>
-</item>
-<item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="7138" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1673" y="0"/>
-</item>
-<item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="7138" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1673" y="0"/>
-</item>
-<item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="7138" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1673" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1875" y="0"/>
-</item>
-<item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="7138" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1875" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1937" y="10"/>
-</item>
-<item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="7138" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1937" y="10"/>
-</item>
-<item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="7138" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1937" y="10"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1970" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1932" y="0"/>
-</item>
-<item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="7138" y="0"/>
-</item>
-<item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="5718" y="139"/>
-</item>
-<item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="5521" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1831" y="0"/>
-</item>
-<item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="5521" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1831" y="0"/>
-</item>
-<item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="5521" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1730" y="0"/>
-</item>
-<item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="5854" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1067" y="0"/>
-</item>
-<item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="5854" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1067" y="0"/>
-</item>
-<item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="5854" y="0"/>
-</item>
-<item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="3990" y="0"/>
-</item>
-<item historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1067" y="0"/>
-</item>
-<item historyLabel="RecipesTests.java" index="0">
-<position info="not_deleted" x="3990" y="0"/>
-</item>
-<item active="true" historyLabel="RecipeStep.java" index="1">
-<position info="not_deleted" x="1067" y="0"/>
+<item active="true" historyLabel="Recipe.java" index="1">
+<position info="not_deleted" x="510" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -376,12 +507,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="left"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="right"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -389,19 +514,15 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="bottom"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Ingredient.java" tooltip="MT2017/src/recipes/Ingredient.java">
-<persistable path="/MT2017/src/recipes/Ingredient.java"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimpleIngredient.java" tooltip="MT2017/src/recipes/SimpleIngredient.java">
 <persistable path="/MT2017/src/recipes/SimpleIngredient.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LexicographicComparator.java" tooltip="MT2017/src/recipes/LexicographicComparator.java">
-<persistable path="/MT2017/src/recipes/LexicographicComparator.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Ingredient.java" tooltip="MT2017/src/recipes/Ingredient.java">
+<persistable path="/MT2017/src/recipes/Ingredient.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RecipeStep.java" tooltip="MT2017/src/recipes/RecipeStep.java">
 <persistable path="/MT2017/src/recipes/RecipeStep.java"/>
@@ -409,8 +530,17 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OvenStep.java" tooltip="MT2017/src/recipes/OvenStep.java">
 <persistable path="/MT2017/src/recipes/OvenStep.java"/>
 </file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Recipe.java" tooltip="MT2017/src/recipes/Recipe.java">
+<persistable path="/MT2017/src/recipes/Recipe.java"/>
+</file>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="ReflectiveCallable.class" tooltip="org.junit.internal.runners.model.ReflectiveCallable">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=MT2017/\/usr\/share\/eclipse\/dropins\/jdt\/plugins\/org.junit_4.8.2.dist\/junit.jar&lt;org.junit.internal.runners.model(ReflectiveCallable.class"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Pair.java" tooltip="MT2017/src/recipes/Pair.java">
 <persistable path="/MT2017/src/recipes/Pair.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LexicographicComparator.java" tooltip="MT2017/src/recipes/LexicographicComparator.java">
+<persistable path="/MT2017/src/recipes/LexicographicComparator.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RecipesTests.java" tooltip="MT2017/src/recipes/RecipesTests.java">
 <persistable path="/MT2017/src/recipes/RecipesTests.java"/>

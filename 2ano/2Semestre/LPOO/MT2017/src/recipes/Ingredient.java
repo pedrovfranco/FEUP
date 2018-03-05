@@ -1,6 +1,6 @@
 package recipes;
 
-public class Ingredient
+public abstract class Ingredient
 {
 	protected String name;
 	

@@ -3,18 +3,16 @@ package recipes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OvenStep
+public class OvenStep extends RecipeStep
 {
-	private String name;
-	private String action;
 	private int temperature;
 	
 	private List< Pair<SimpleIngredient, Float> > ingredients = new ArrayList< Pair<SimpleIngredient, Float> >(); 
 	
 	public OvenStep(String name, String action, int temperature)
 	{
-		this.name = name;
-		this.action = action;
+		super(name, action);
+
 		this.temperature = temperature;
 	}
 	
@@ -29,7 +27,7 @@ public class OvenStep
 	
 	public String getName()
 	{
-		return name;
+		return super.name;
 	}
 	
 	public String getAction()

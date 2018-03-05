@@ -1,0 +1,16 @@
+package recipes;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Recipe
+{
+	private String name;
+	private List< Pair<Ingredient, Float> > ingredients = new ArrayList< Pair<Ingredient, Float> >();
+	
+	public Recipe(String string)
+	{
+		
+	}
+
+}

@@ -6,16 +6,17 @@ import java.util.List;
 
 public class RecipeStep extends Ingredient
 {
-	private String name;
-	private String action;
+	protected String action;
 	
 	private List< Pair<Ingredient, Float> > ingredients = new ArrayList< Pair<Ingredient, Float> >();
 	
 	public RecipeStep(String name, String action)
 	{
-		super(name);;
+		super(name);
 		
-		this.name = name;
+		if(action == null)
+			throw new IllegalArgumentException();
+		
 		this.action = action;
 	}
 	
@@ -32,44 +33,61 @@ public class RecipeStep extends Ingredient
 	public void addIngredient(Ingredient input, float quantity)
 	{
 		Pair<Ingredient, Float> foo = new Pair<Ingredient, Float>(input, quantity);
-		if (!ingredients.contains(foo))
+		
+		for (int i = 0;  i < ingredients.size(); i++)
 		{
-			ingredients.add(foo);
+			if (ingredients.get(i).getFirst().getName().equals(input.getName()))
+				return;
 		}
-			
+		
+		ingredients.add(foo);
 	}
 	
 	public void addIngredient(Ingredient input, int quantity)
 	{
-		Pair<Ingredient, Float> foo = new Pair<Ingredient, Float>(input, (float)quantity);
-		if (!ingredients.contains(foo))
-		{
-			ingredients.add(foo);
-		}
-			
+		this.addIngredient(input, new Float(quantity));
+	}
+	
+	public void addIngredient(RecipeStep input, float quantity)
+	{
+		addIngredient((Ingredient)input, quantity);
 	}
 	
 	public void addIngredient(RecipeStep input, int quantity)
 	{
-		Pair<RecipeStep, Float> foo = new Pair<RecipeStep, Float>(input, (float)quantity);
-		if (!ingredients.contains(foo))
-		{
-			ingredients.add(foo);
-		}
+		addIngredient((Ingredient)input, new Float(quantity));
 	}
 	
 	public Float getQuantity(Ingredient input)
 	{
+		Float sum = new Float(0);
+		
 		for (int i = 0; i < ingredients.size(); i++)
 		{
 			if (ingredients.get(i).getFirst() instanceof RecipeStep)
 			{
-				return ingredients.get(i).getSecond();
-			}
+				Pair<RecipeStep, Float> foo = new Pair<RecipeStep, Float>((RecipeStep) ingredients.get(i).getFirst(), ingredients.get(i).getSecond());
 				
+				if (foo.getFirst().getName().equals(input.getName()))
+				{
+					if (foo.getFirst().getQuantity(input) > 0)
+						sum += foo.getFirst().getQuantity(input) * foo.getSecond();
+					else
+						sum += foo.getSecond();
+				}
+				else
+				{
+					sum += foo.getFirst().getQuantity(input) * foo.getSecond();
+				}
+			}
+			else
+			{
+				if (ingredients.get(i).getFirst().getName().equals(input.getName()))
+					sum += ingredients.get(i).getSecond();
+			}
 		}
 		
-		return 0F;
+		return sum;
 	}
 	
 	public int getIngredientCount()
