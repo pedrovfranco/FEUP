@@ -1,0 +1,31 @@
+package circuits;
+
+import java.util.List;
+
+public class CombinatorialCircuit
+{
+	List<LogicVariable> variables;
+	
+	public boolean addVariable(LogicVariable a)
+	{
+		if (a == null)
+			return false;
+		
+		if (variables.contains(a))
+			return false;
+		else
+		{
+			variables.add(a);
+			return true;
+		}
+	}
+	
+	public LogicVariable getVariableByName()
+	{
+		for (int i = 0; i < variables.size(); i++)
+		{
+			if ()
+		}
+	}
+
+}

@@ -29,12 +29,6 @@ public class Recipe
 		}
 		
 	}
-	
-	public void add(SimpleIngredient input)
-	{
-
-	}
-
 
 
 }

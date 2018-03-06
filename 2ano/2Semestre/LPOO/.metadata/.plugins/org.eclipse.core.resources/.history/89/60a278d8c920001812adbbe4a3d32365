@@ -1,0 +1,14 @@
+package circuits;
+
+import java.util.List;
+
+public class CombinatorialCircuit
+{
+	List<LogicVariable> variables = new List<LogicVariable>();
+	
+	public Object addVariable(LogicVariable a)
+	{
+		
+	}
+
+}

@@ -1,0 +1,696 @@
+package dkeep.logic;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class GameState
+{
+
+	public int level = 0;
+
+	boolean flag = false;
+	int count = 0;
+
+	public Hero hero = new Hero(1, 1);
+//	Ogre ogre = new Ogre(4, 1);
+	public Guard guard= new Guard(8,1);
+	
+	public ArrayList<Ogre> ogres = new ArrayList<Ogre>();
+	
+		                                       
+	public Map map = new Map();
+	
+	public void setGuard()
+	{
+		Random r = new Random();
+		int n = r.nextInt(3);
+		if (n == 0)
+			guard = new DrunkenGuard(8,1,"drunken");
+		else if (n == 1)
+			guard = new RookieGuard(8,1,"rookie");
+		else
+			guard = new SuspiciousGuard(8,1, "suspicious");
+		
+		System.out.println(guard.guardType);
+	}
+	
+	public void guardFront()
+	{
+		if (guard.x == 8 && guard.y == 1)
+		{
+			guard.x--;
+		}
+		
+		else if (guard.x == 7 && guard.y > 0 && guard.y < 5)
+		{
+			guard.y++;
+		}
+		
+		else if (guard.x > 1 && guard.x < 8 && guard.y == 5)
+		{
+			guard.x--;
+		}
+		
+		else if (guard.x == 1 && guard.y == 5)
+		{
+			guard.y++;
+		}
+		
+		else if (guard.x > 0 && guard.x < 8 && guard.y == 6)
+		{
+			guard.x++;
+		}
+		
+		else
+		{
+			guard.y--;
+		}
+	}
+	
+	public void guardReverse()
+	{
+		if (guard.x == 8 && guard.y == 1)
+		{
+			guard.y++;
+		}
+		else if (guard.x == 7 && guard.y == 1)
+		{
+			guard.x++;
+		}
+		
+		else if (guard.x == 7 && guard.y > 1 && guard.y < 6)
+		{
+			guard.y--;
+		}
+		
+		else if (guard.x > 0 && guard.x < 7 && guard.y == 5)
+		{
+			guard.x++;
+		}
+		else if (guard.x == 1 && guard.y == 6)
+		{
+			guard.y--;
+		}
+		else if (guard.x > 1 && guard.x < 9 && guard.y == 6)
+		{
+			guard.x--;
+		}
+		else
+		{
+			guard.y++;
+		}
+	}
+	
+	public void update(char input)
+	{
+		if (level == 0)
+		{
+			moveHero(input);
+			moveGuard();
+			checkCollision(guard);
+		}
+		
+		else if (level == 1)
+		{
+			boolean keyExists = false;
+			
+			moveHero(input);
+			
+			for (int i = 0; i < ogres.size(); i++) // Move ogres
+			{
+				moveOgre(ogres.get(i));
+				
+				checkCollision(ogres.get(i));
+				
+				if (ogres.get(i).hasKey)
+					keyExists = true;
+				
+				if (ogres.get(i).club.hasKey)
+					keyExists = true;
+			}
+			
+			if (level == -1)
+				return;
+			
+			if (hero.ch == 'K')
+				keyExists = true;
+			
+			if (!keyExists)
+				map.getMap(level)[1][7] = 'k';
+		}
+
+	}
+	
+	public void nextLevel()
+	{
+		level++;
+
+		if (level == 1)
+		{
+			hero.x = 1;
+			hero.y = 7;
+			hero.ch = 'A';
+			map.getMap(level)[7][1] = 'H';
+			
+			ogres.add(new Ogre(4,1));
+			ogres.add(new Ogre(2,1));
+			
+		}
+		
+	}
+
+	public void checkCollision(Character ch)
+	{
+		if (ch instanceof Guard)
+		{
+			if (map.getMap(level)[ch.y][ch.x] != 'g')
+			{
+				if ((Math.abs(ch.x - hero.x) < 2 && Math.abs(ch.y - hero.y) == 0 || Math.abs(ch.y - hero.y) < 2 && Math.abs(ch.x - hero.x) == 0))
+					level = -1; //Adicionei aqui a restricao de que se for 'g' o heroi nao morre pq o cha esta a dormir
+			}
+		}
+		else if (ch instanceof Ogre)
+		{
+			Ogre foo = (Ogre) ch;
+			
+			if ((Math.abs(ch.x - hero.x) < 2 && Math.abs(ch.y - hero.y) == 0 || Math.abs(ch.y - hero.y) < 2 && Math.abs(ch.x - hero.x) == 0))
+			{
+				if (foo.ch != '8')
+				{
+					foo.previousChar = foo.ch;
+					foo.roundsLeftStunned = 3;
+					foo.ch = '8';
+				}
+			}
+			
+//			if ((Math.abs(foo.club.x - hero.x) < 2 && Math.abs(foo.club.y - hero.y) == 0 || Math.abs(foo.club.y - hero.y) < 2 && Math.abs(foo.club.x - hero.x) == 0))
+//				level = -1;
+		}
+		else
+		{
+			if ((Math.abs(ch.x - hero.x) < 2 && Math.abs(ch.y - hero.y) == 0 || Math.abs(ch.y - hero.y) < 2 && Math.abs(ch.x - hero.x) == 0))
+				level = -1;
+		}
+	}
+	
+	void openDoors()
+	{
+		if (level == 0)
+		{
+			map.getMap(level)[5][0] = 'S';
+			map.getMap(level)[6][0] = 'S';
+		}
+
+		else if (level == 1)
+		{
+			map.getMap(level)[1][0] = 'S';
+		}
+	}
+	
+	void moveGuard()
+	{
+		if (level == 0)
+		{
+			if (guard.guardType.equals("rookie")) // Rookie Guard
+			{
+				map.getMap(level)[guard.y][guard.x] = ' ';
+				guardFront();
+				map.getMap(level)[guard.y][guard.x] = 'G';
+			}
+			else if (guard.guardType.equals("drunken"))  // Drunken Guard
+			{
+				Random rand = new Random();
+				int sleep = rand.nextInt(2);
+				int rev;
+				
+				map.getMap(level)[guard.y][guard.x] = ' ';
+				
+				if (sleep == 1) // Time to sleep
+				{
+					map.getMap(level)[guard.y][guard.x] = 'g';
+					guard.wasSleeping = true;
+				}
+
+				else
+				{
+					if(guard.wasSleeping)
+					{
+						rev = rand.nextInt(2);
+						if (rev == 0)			
+							guardReverse();
+						else
+							guardFront();
+						guard.wasSleeping = false;
+					}
+					else
+					{
+						guardFront();
+						guard.wasSleeping = false;
+					}
+					map.getMap(level)[guard.y][guard.x] = 'G';
+				}
+
+			}
+			else // Suspicious Guard
+			{
+				Random rand = new Random();
+				int rev = rand.nextInt(2);
+				
+				map.getMap(level)[guard.y][guard.x] = ' ';
+				
+				if (rev == 0)
+					guardFront();
+				else
+					guardReverse();
+				
+				map.getMap(level)[guard.y][guard.x] = 'G';
+			}
+		}
+	}
+	
+
+	boolean checkMapCollision(Character chrt, int direction)
+	{
+		if (direction == 0) // Up
+		{
+			if (map.getMap(level)[chrt.y - 1][chrt.x] != ' ' && map.getMap(level)[chrt.y - 1][chrt.x] != 'k')
+			{
+				return true;
+			}
+		}
+
+		if (direction == 1) // Left
+		{
+			if (map.getMap(level)[chrt.y][chrt.x - 1] != ' ' && map.getMap(level)[chrt.y][chrt.x - 1] != 'k')
+			{
+				return true;
+			}
+		}
+
+		if (direction == 2) // Down
+		{
+			if (map.getMap(level)[chrt.y + 1][chrt.x] != ' ' && map.getMap(level)[chrt.y + 1][chrt.x] != 'k')
+			{
+				return true;
+			}
+		}
+
+		if (direction == 3) // Right
+		{
+			if (map.getMap(level)[chrt.y][chrt.x + 1] != ' ' && map.getMap(level)[chrt.y][chrt.x + 1] != 'k')
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	void moveOgre(Ogre ogre)
+	{
+		// Ogre part
+		
+		if (level == 2 || level == -1) // Was looping indefinitely when the level ended
+			return;
+		
+
+		if (ogre.hasKey)
+			map.getMap(level)[ogre.y][ogre.x] = 'k';
+		else
+			map.getMap(level)[ogre.y][ogre.x] = ' ';
+
+		map.getMap(level)[ogre.club.y][ogre.club.x] = ' '; //Clear ogre's club on the map
+		
+		Random r = new Random();
+
+		int value;
+
+		if (ogre.roundsLeftStunned > 1)
+		{
+			ogre.roundsLeftStunned--;
+		}
+		else if (ogre.roundsLeftStunned == 1) //Unfreezes
+		{
+			ogre.ch = ogre.previousChar;
+			ogre.roundsLeftStunned--;
+		}
+		else
+		{
+			while (true)
+			{
+				
+				value = r.nextInt(4);
+		
+				if (value == 0) // Up
+				{
+					if (!checkMapCollision(ogre, value))
+					{
+						ogre.y--;
+		
+						if (map.getMap(level)[ogre.y][ogre.x] == 'k')
+						{
+							ogre.hasKey = true;
+							ogre.ch = '$';
+						}
+						else
+						{
+							ogre.hasKey = false;
+							ogre.ch = 'O';
+						}
+		
+						break;
+					}
+				}
+				
+				else if (value == 1) // Left
+				{
+		
+					if (!checkMapCollision(ogre, value))
+					{
+						ogre.x--;
+		
+						if (map.getMap(level)[ogre.y][ogre.x] == 'k')
+						{
+							ogre.hasKey = true;
+							ogre.ch = '$';
+						}
+						else
+						{
+							ogre.hasKey = false;
+							ogre.ch = 'O';
+						}
+		
+						break;
+					}
+				}
+				
+				else if (value == 2) // Down
+				{
+		
+					if (!checkMapCollision(ogre, value))
+					{
+						ogre.y++;
+		
+						if (map.getMap(level)[ogre.y][ogre.x] == 'k')
+						{
+							ogre.hasKey = true;
+							ogre.ch = '$';
+						}
+						else
+						{
+							ogre.hasKey = false;
+							ogre.ch = 'O';
+						}
+		
+						break;
+					}
+				}
+				
+				else if (value == 3) // Right
+				{
+		
+					if (!checkMapCollision(ogre, value))
+					{
+						ogre.x++;
+		
+						if (map.getMap(level)[ogre.y][ogre.x] == 'k')
+						{
+							ogre.hasKey = true;
+							ogre.ch = '$';
+						}
+						else
+						{
+							ogre.hasKey = false;
+							ogre.ch = 'O';
+						}
+		
+						break;
+					}
+				}
+			}
+		}
+		
+		map.getMap(level)[ogre.y][ogre.x] = ogre.ch;
+
+		
+		// Club part
+		
+		if (ogre.club.hasKey)
+			map.getMap(level)[ogre.club.y][ogre.club.x] = 'k';
+		
+		else if (map.getMap(level)[ogre.club.y][ogre.club.x] != 'O')
+			map.getMap(level)[ogre.club.y][ogre.club.x] = ' ';
+		
+		ogre.club.x = ogre.x;
+		ogre.club.y = ogre.y;
+
+		while (true)
+		{
+//			System.out.println("Entrou no while do club");
+			value = r.nextInt(4);
+
+			if (value == 0) // Up
+			{
+				if (!checkMapCollision(ogre.club, value))
+				{
+					ogre.club.y--;
+
+					if (map.getMap(level)[ogre.club.y][ogre.club.x] == 'k')
+					{
+						ogre.club.hasKey = true;
+						ogre.club.ch = '$';
+					}
+					else
+					{
+						ogre.club.hasKey = false;
+						ogre.club.ch = '*';
+					}
+
+					break;
+				}
+			}
+			
+			else if (value == 1) // Left
+			{
+
+				if (!checkMapCollision(ogre.club, value))
+				{
+					ogre.club.x--;
+
+					if (map.getMap(level)[ogre.club.y][ogre.club.x] == 'k')
+					{
+						ogre.club.hasKey = true;
+						ogre.club.ch = '$';
+					}
+					else
+					{
+						ogre.club.hasKey = false;
+						ogre.club.ch = '*';
+					}
+
+					break;
+				}
+			}
+			
+			else if (value == 2) // Down
+			{
+
+				if (!checkMapCollision(ogre.club, value))
+				{
+					ogre.club.y++;
+
+					if (map.getMap(level)[ogre.club.y][ogre.club.x] == 'k')
+					{
+						ogre.club.hasKey = true;
+						ogre.club.ch = '$';
+					}
+					else
+					{
+						ogre.club.hasKey = false;
+						ogre.club.ch = '*';
+					}
+
+					break;
+				}
+			}
+			
+			else if (value == 3) // Right
+			{
+
+				if (!checkMapCollision(ogre.club, value))
+				{
+					ogre.club.x++;
+
+					if (map.getMap(level)[ogre.club.y][ogre.club.x] == 'k')
+					{
+						ogre.club.hasKey = true;
+						ogre.club.ch = '$';
+					}
+					else
+					{
+						ogre.club.hasKey = false;
+						ogre.club.ch = '*';
+					}
+
+					break;
+				}
+			}
+			
+		}
+//		System.out.println("Saiu no while do club");
+		
+		map.getMap(level)[ogre.club.y][ogre.club.x] = ogre.club.ch;
+	}
+
+	void moveHero(char input)
+	{
+		map.getMap(level)[hero.y][hero.x] = ' ';
+		 
+		if (input == 'w') //Up
+		{
+			if (!checkMapCollision(hero, 0))
+			{
+				hero.y--;
+				
+				if (map.getMap(level)[hero.y][hero.x] == 'k') // Check if hero picks up key
+				{
+					hero.hasKey = true;
+					
+					if (level == 0)
+						openDoors();
+					
+					else if (level == 1)
+						hero.ch = 'K';
+				}
+				else
+					hero.hasKey = false;
+				
+				if (map.getMap(level)[hero.y][hero.x] == 'S')
+					nextLevel();
+			}
+			
+			if (level == 1)
+			{
+				if (map.getMap(level)[hero.y-1][hero.x] == 'I')
+					openDoors();
+			}
+		}
+		
+		else if (input == 'a') //Left
+		{
+			if (level == 1)
+			{
+				if (map.getMap(level)[hero.y][hero.x-1] == 'I')
+				{
+					openDoors();
+					map.getMap(level)[hero.y][hero.x] = hero.ch;
+					return;
+				}
+			}
+			
+			if (!checkMapCollision(hero, 1))
+			{
+				hero.x--;
+				
+				if (map.getMap(level)[hero.y][hero.x] == 'k') // Check if hero picks up key
+				{
+					hero.hasKey = true;
+					
+					if (level == 0)
+						openDoors();
+					
+					else if (level == 1)
+						hero.ch = 'K';
+				}
+				else
+					hero.hasKey = false;
+				
+				if (map.getMap(level)[hero.y][hero.x] == 'S')
+				{
+					nextLevel();
+					return;
+				}
+			}
+			
+			
+		}
+		
+		else if (input == 's') //Down
+		{
+			if (level == 1)
+			{
+				if (map.getMap(level)[hero.y+1][hero.x] == 'I')
+				{
+					openDoors();
+					map.getMap(level)[hero.y][hero.x] = hero.ch;
+					return;
+				}
+			}
+			
+			if (!checkMapCollision(hero, 2))
+			{
+				hero.y++;
+				
+				if (map.getMap(level)[hero.y][hero.x] == 'k') // Check if hero picks up key
+				{
+					hero.hasKey = true;
+					
+					if (level == 0)
+						openDoors();
+					
+					else if (level == 1)
+						hero.ch = 'K';
+				}
+				else
+					hero.hasKey = false;
+				
+				if (map.getMap(level)[hero.y][hero.x] == 'S')
+					nextLevel();
+			}
+			
+		}
+			
+		else if (input == 'd') //Right
+		{
+			if (level == 1)
+			{
+				if (map.getMap(level)[hero.y][hero.x+1] == 'I')
+				{
+					openDoors();
+					map.getMap(level)[hero.y][hero.x] = hero.ch;
+					return;
+				}
+			}
+			
+			if (!checkMapCollision(hero, 3))
+			{
+				hero.x++;
+				
+				if (map.getMap(level)[hero.y][hero.x] == 'k') // Check if hero picks up key
+				{
+					hero.hasKey = true;
+					
+					if (level == 0)
+						openDoors();
+					
+					else if (level == 1)
+						hero.ch = 'K';
+						
+				}
+				else
+					hero.hasKey = false;
+				
+				if (map.getMap(level)[hero.y][hero.x] == 'S')
+				{
+					nextLevel();
+					return;
+				}
+				
+			}
+			
+		}
+		
+		map.getMap(level)[hero.y][hero.x] = hero.ch;
+	}
+
+}

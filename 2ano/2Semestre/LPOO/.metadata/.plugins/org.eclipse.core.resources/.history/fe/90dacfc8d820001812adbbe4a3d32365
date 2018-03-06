@@ -1,0 +1,43 @@
+package building;
+
+public class Building extends Facility
+{
+	private String name;
+	private int minFloor;
+	private int maxFloor;
+	private int capacity
+	
+	public Building(String name, int minFloor, int maxFloor) throws IllegalArgumentException
+	{
+		if (name == null)
+			throw new IllegalArgumentException();
+		
+		if (maxFloor < minFloor)
+			throw new IllegalArgumentException();
+		
+		this.name = name;
+		this.minFloor = minFloor;
+		this.maxFloor = maxFloor;
+		this.capacity = 0;
+	}
+
+	public String getName()
+	{
+		return name;
+	}
+	
+	public int getMinFloor()
+	{
+		return minFloor;
+	}
+	
+	public int getMaxFloor()
+	{
+		return maxFloor;
+	}
+
+	public String toString()
+	{
+		return ("Building(" + name + ")");
+	}
+}

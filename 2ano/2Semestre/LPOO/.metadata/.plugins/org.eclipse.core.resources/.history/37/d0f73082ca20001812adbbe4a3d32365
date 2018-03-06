@@ -1,0 +1,32 @@
+package circuits;
+
+import java.util.List;
+
+public class CombinatorialCircuit
+{
+	List<LogicVariable> variables;
+	
+	public boolean addVariable(LogicVariable a)
+	{
+		if (a == null)
+			return false;
+		
+		if (variables.contains(a))
+			return false;
+		else
+		{
+			variables.add(a);
+			return true;
+		}
+	}
+	
+	public LogicVariable getVariableByName(String name)
+	{
+		int index = variables.indexOf(new LogicVariable(name));
+		
+		if (index == -1)
+			return null;
+		else
+	}
+
+}

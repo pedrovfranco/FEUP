@@ -1,6 +1,6 @@
 package recipes;
 
-public abstract class Ingredient
+public abstract class Ingredient implements Comparable<Ingredient>
 {
 	protected String name;
 	
@@ -34,4 +34,16 @@ public abstract class Ingredient
 	{
 		return name;
 	}
+	
+	public int compareTo(Ingredient o)
+	{
+		if (o == null)
+			return -1;
+		else
+		{
+			Ingredient foo = (Ingredient) o;
+			return this.getName().compareToIgnoreCase(foo.getName());
+		}	
+	}
+
 }

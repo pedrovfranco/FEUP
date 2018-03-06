@@ -1,0 +1,8 @@
+package building;
+
+public abstract class Facility
+{
+	protected int capacity;
+	
+	public abstract String getName();
+}

@@ -119,7 +119,6 @@ public class RecipesTests {
         assertEquals(0.9f, mixedFruits.getQuantity(orange), 0);
         
         assertEquals(1, sweetFruits.getQuantity(mixedFruits), 0);
-        System.out.println(sweetFruits.getQuantity(sugar));
         assertEquals(.3f, sweetFruits.getQuantity(sugar), 0);
         
         fieldsArentPublic(Ingredient.class);
@@ -164,7 +163,6 @@ public class RecipesTests {
         
         // ingredients always come in alphabetical order
         assertEquals("to make mixed fruits, slice 1.2 apple, 0.8 orange", "" + mixedFruits);
-//        System.out.println("" + sweetFruits);
         assertEquals("to make sweet fruits, mix 2.0 mixed fruits, 0.3 sugar", "" + sweetFruits);
     }
 
@@ -210,7 +208,6 @@ public class RecipesTests {
         assertEquals(3, recipe1.getStepCount());
 
         // printout ingredients sorted by their names (alphabetically)
-        
         TreeSet<Ingredient> ss = new TreeSet<Ingredient>();
         ss.add(cheese);
         ss.add(ham);

@@ -1,0 +1,15 @@
+package building;
+
+public class User
+{
+	private string name;
+	
+	public User(String name) throws IllegalArgumentException
+	{
+		if (name == null)
+			throw new IllegalArgumentException();
+	}
+	
+	pugetName
+
+}

@@ -2,19 +2,24 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Recipe.class" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="nextLevel"/>
+			<item value="rounds"/>
+			<item value="roundsLef"/>
+			<item value="ogre"/>
+			<item value="CheckColl"/>
+			<item value="guard"/>
 			<item value="Recipe.class"/>
 			<item value="addStep"/>
-			<item value="apple"/>
-			<item value="SimpleIngredient"/>
-			<item value="Simple"/>
 		</list>
 		<list key="replacehistory">
+			<item value="ogre.club"/>
+			<item value="ch"/>
 			<item value="Ingredient"/>
 		</list>
 	</section>

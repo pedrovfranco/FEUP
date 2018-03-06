@@ -1,0 +1,41 @@
+package building;
+
+public class Room
+{
+	private Building building;
+	private String number;
+	private int floor;
+	
+	public Room(Building building, String number, int floor) throws IllegalArgumentException
+	{
+		if (building == null || number == null)
+			throw new IllegalArgumentException();
+		
+		if (floor < building.getMinFloor() || floor > building.getMaxFloor()) // Check if floor is within building floor range
+			throw new IllegalArgumentException();
+		
+		this.building = building;
+		this.number = number;
+		this.floor = floor;
+	}
+	
+	public Building getBuilding()
+	{
+		return building;
+	}
+	
+	public String getNumber()
+	{
+		return number;
+	}
+	
+	public int getFloor()
+	{
+		return floor;
+	}
+	
+	public String getName()
+	{
+		return building.getName(); + name
+	}
+}

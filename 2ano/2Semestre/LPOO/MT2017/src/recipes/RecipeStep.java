@@ -1,14 +1,12 @@
 package recipes;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.TreeSet;
 
 public class RecipeStep extends Ingredient
 {
 	protected String action;
 	
-	private List< Pair<Ingredient, Float> > ingredients = new ArrayList< Pair<Ingredient, Float> >();
+	private TreeSet< Pair<Ingredient, Float> > ingredients = new TreeSet< Pair<Ingredient, Float> >(new PairComparator());
 	
 	public RecipeStep(String name, String action)
 	{
@@ -30,17 +28,9 @@ public class RecipeStep extends Ingredient
 		return action;
 	}
 	
-	public void addIngredient(Ingredient input, float quantity)
+	public boolean addIngredient(Ingredient input, float quantity)
 	{
-		Pair<Ingredient, Float> foo = new Pair<Ingredient, Float>(input, quantity);
-		
-		for (int i = 0;  i < ingredients.size(); i++)
-		{
-			if (ingredients.get(i).getFirst().getName().equals(input.getName()))
-				return;
-		}
-		
-		ingredients.add(foo);
+		return ingredients.add(new Pair<Ingredient, Float>(input, quantity));
 	}
 	
 	public void addIngredient(Ingredient input, int quantity)
@@ -62,11 +52,11 @@ public class RecipeStep extends Ingredient
 	{
 		Float sum = new Float(0);
 		
-		for (int i = 0; i < ingredients.size(); i++)
+		for (Pair<Ingredient, Float> it : ingredients)
 		{
-			if (ingredients.get(i).getFirst() instanceof RecipeStep)
+			if (it.getFirst() instanceof RecipeStep)
 			{
-				Pair<RecipeStep, Float> foo = new Pair<RecipeStep, Float>((RecipeStep) ingredients.get(i).getFirst(), ingredients.get(i).getSecond());
+				Pair<RecipeStep, Float> foo = new Pair<RecipeStep, Float>((RecipeStep) it.getFirst(), it.getSecond());
 				
 				if (foo.getFirst().getName().equals(input.getName()))
 				{
@@ -82,8 +72,8 @@ public class RecipeStep extends Ingredient
 			}
 			else
 			{
-				if (ingredients.get(i).getFirst().getName().equals(input.getName()))
-					sum += ingredients.get(i).getSecond();
+				if (it.getFirst().getName().equals(input.getName()))
+					sum += it.getSecond();
 			}
 		}
 		
@@ -95,23 +85,21 @@ public class RecipeStep extends Ingredient
 		return ingredients.size();
 	}
 	
-	public List< Pair<Ingredient, Float> > getIngredients()
+	public TreeSet< Pair<Ingredient, Float> > getIngredients()
 	{
 		return ingredients;
 	}
 	
 	@Override
 	public String toString()
-	{
-		Collections.sort(ingredients, new LexicographicComparator());
-		
+	{		
 		String res = "to make " + name + ", " + action + " ";
 		
-		for (int i = 0; i < ingredients.size(); i++)
+		for (Pair<Ingredient, Float> it : ingredients)
 		{
-			res += ingredients.get(i).getSecond() + " " + ingredients.get(i).getFirst().getName();
+			res += it.getSecond() + " " + it.getFirst().getName();
 			
-			if (i != ingredients.size()-1) //If not last one
+			if (it != ingredients.last()) //If not last one
 				res += ", ";
 		}
 		

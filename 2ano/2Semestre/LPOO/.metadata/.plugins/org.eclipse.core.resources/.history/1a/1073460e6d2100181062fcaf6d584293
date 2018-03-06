@@ -1,0 +1,18 @@
+package dkeep.test;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+import dkeep.logic.Map;
+import dkeep.logic.Hero;
+import dkeep.logic.GameState;
+
+public class test
+{
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

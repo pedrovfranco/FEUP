@@ -1,0 +1,50 @@
+package circuits;
+
+public abstract class LogicGate
+{
+	protected LogicVariable output;
+	protected LogicVariable input1;
+	protected LogicVariable input2;
+	
+	public LogicGate(LogicVariable output, LogicVariable input1, LogicVariable input2)
+	{
+		if (output == null || input1 == null || input2 == null)
+		{
+			throw new IllegalArgumentException();
+		}
+		
+		this.output = output;
+		this.input1 = input1;
+		this.input2 = input2;
+		
+		this.output.gate = this;
+	}
+	
+	public LogicGate(LogicVariable output, LogicVariable input1)
+	{
+		if (output == null || input1 == null)
+		{
+			throw new IllegalArgumentException();
+		}
+		
+		this.output = output;
+		this.input1 = input1;
+		this.input2 = null;
+	}
+	
+	public LogicVariable getOutput()
+	{
+		return output;
+	}
+	
+	public LogicVariable[] getInputs()
+	{
+		LogicVariable[] ret = {input1, input2};
+		return ret;
+	}
+	
+	public abstract String getSymbol();
+	
+	
+
+}

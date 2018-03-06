@@ -1,0 +1,29 @@
+package dkeep.logic;
+
+public class Map {
+
+	static char[][][] map;
+	
+	public Map(char[][][] map)
+	{
+		this.map = map;
+	}
+	
+	char[][] getMap(int level)
+	{
+		return map[level];
+	}
+	
+	public void printmap(int level)
+	{
+		for (int i = 0; i < map[level].length; i++)
+		{
+			System.out.println(map[level][i]);
+		}		
+	}
+	
+	public int numberOfMaps()
+	{
+		return map.length;
+	}
+}

@@ -1,0 +1,14 @@
+package dkeep.logic;
+
+public class Ogre extends Character{
+		
+		protected Character club = new Character(-1, -1, '-');
+		
+		Ogre(int x, int y)
+		{
+			super(x,y,'O');
+			club.x = this.x;
+			club.y = this.y;
+			club.ch = '*';
+		}
+}

@@ -1,0 +1,9 @@
+package circuits;
+
+public class GateNot extends LogicGate
+{
+	public GateOr(LogicVariable output, LogicVariable input1)
+	{
+		super(output, input1);
+	}
+}

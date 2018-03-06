@@ -1,0 +1,25 @@
+package circuits;
+
+public class LogicVariable
+{
+	private String name;
+	private boolean value;
+	
+	public LogicVariable(String name, boolean value)
+	{
+		if (name == null)
+			throw new IllegalArgumentException();
+		
+		this.name = name;
+		this.value = value;
+	}
+	
+	public LogicVariable(String name)
+	{
+		if (name == null)
+			throw new IllegalArgumentException();
+		
+		this.name = name;
+		this.value = false;
+	}
+}

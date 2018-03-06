@@ -1,0 +1,20 @@
+package circuits;
+
+public class GateAnd extends LogicGate
+{
+	public GateAnd(LogicVariable output, LogicVariable input1, LogicVariable input2) throws ColisionException
+	{
+		super(output, input1, input2);
+	}
+	
+	public String getSymbol()
+	{
+		return "AND";
+	}
+	
+	public boolean calculate()
+	{
+		output.setValue(input1.value && input2.value); 
+		return output.value;
+	}
+}

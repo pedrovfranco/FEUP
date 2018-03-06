@@ -1,0 +1,13 @@
+package building;
+
+public class Building
+{
+	private String name;
+	private int minFloor;
+	private int maxFloor;
+	public Building(String name, int i, int j)
+	{
+		// TODO Auto-generated constructor stub
+	}
+
+}
