@@ -9,6 +9,8 @@
 #include "Point.h"
 #include "NearestPoints.h"
 #include <random>
+#include <thread>
+
 
 using namespace std;
 
@@ -229,8 +231,12 @@ void testNP_DC_8Threads() {
 
 bool runAllTests(int argc, char const *argv[]) {
 	cute::suite s { };
-	s.push_back(CUTE(testNP_BF));
+	// s.push_back(CUTE(testNP_BF));
+
+	cout << std::thread::hardware_concurrency() << endl;
+
 	s.push_back(CUTE(testNP_DC));
+
 	s.push_back(CUTE(testNP_DC_2Threads));
 	s.push_back(CUTE(testNP_DC_4Threads));
 	s.push_back(CUTE(testNP_DC_8Threads));

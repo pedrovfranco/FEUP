@@ -12,16 +12,15 @@
 const double MAX_DOUBLE = std::numeric_limits<double>::max();
 
 template<class T>
-T max(T &a, T &b)
+T max(const T &a, const T &b)
 {
-	if (a>b)
-		return a;
-	else
+	if (a<b)
 		return b;
+	else
+		return a;
 }
 
-template<class T>
-T min(T &a, T &b)
+Result min(const Result &a, const Result &b)
 {
 	if (a<b)
 		return a;
@@ -107,10 +106,13 @@ static void npByY(vector<Point> &vp, int left, int right, Result &res)
 	if (vp.size() < 2)
 		return;
 
-	for (int i = 0; i < vp.size(); i++)
+	for (int i = left; i <= right; i++)
 	{
-		for (int j = i+1; j < vp.size(); j++)
+		for (int j = i+1; j <= right; j++)
 		{
+			if (vp[j].y - vp[i].y > res.dmin)
+				break;
+
 			if (vp[i].distance(vp[j]) < res.dmin)
 			{
 				res.dmin = vp[i].distance(vp[j]);
@@ -124,67 +126,77 @@ static void npByY(vector<Point> &vp, int left, int right, Result &res)
 /**
  * Recursive divide and conquer algorithm.
  * Finds the nearest points in "vp" between indices left and right (inclusive),
- * using at most numThreads.
+ * using at most hreads.
  */
 static Result np_DC(vector<Point> &vp, int left, int right, int numThreads) {
 	Result res;
 
 	// Base case of two points
-	if (right - left == 2)
+	if (right - left == 1)
 	{
-		res.dmin = vp[0].distance(vp[1]);
-		return res;
+		return Result(vp[left].distance(vp[right]), vp[left], vp[right]);
 	}
 
 	// Base case of a single point: no solution, so distance is MAX_DOUBLE
-	if (right - left < 2)
+	if (left >= right)
 	{
-		res.dmin = MAX_DOUBLE;
-		return res;
+		return res; // returns MAX_DOUBLE
 	}
 
 	// Divide in halves (left and right) and solve them recursively,
 	// possibly in parallel (in case numThreads > 1)
-	Result half1 = np_DC(vp, 0, (vp.size()-1)/2, numThreads);
-	Result half2 = np_DC(vp, (vp.size()-1)/2 + 1, vp.size() - 1, numThreads);
+	Result half1, half2;
+	if (numThreads > 1) {
+		std::thread t( [&] () {half1 = np_DC(vp, left, (right + left)/2, numThreads/2);});
+		half2 = np_DC(vp, (right + left)/2 + 1, right, numThreads/2);
+		t.join();
+	}
+	else {
+		 half1 = np_DC(vp, left, (right + left)/2, numThreads);
+		 half2 = np_DC(vp, (right + left)/2 + 1, right, numThreads);
+
+	}
 
 	// Select the best solution from left and right
-	Result min = min(half1, half2);
+	Result minimum = min(half1, half2);
 
 	// Determine the strip area around middle point
-	double deltax = min.dmin;
-	double midX = (v.front().x + v.back().x)/2;
-	int beginMid;
-	int endMid;
+	double deltax = minimum.dmin;
+	double midX = vp[(right + left)/2].x;
+	int beginMid = left;
+	int endMid = right;
 
-	for (int i = 0; i < v.size(); i++)
+	for (int i = left; i <= right; i++) // Finds mid limit at right
 	{
-		if (vp[i].x > midX - deltax)
+		if (vp[i].x > (midX - deltax))
 		{
 			beginMid = i;
 			break;
 		}
 	}
 
-	for (int i = v.size(); i >= 0; i--)
+	for (int i = right; i >= left; i--) // Finds mid limit at left
 	{
-		if (vp[i].x < midX + deltax)
+		if (vp[i].x < (midX + deltax))
 		{
 			endMid = i;
 			break;
 		}
 	}
 
+  if (beginMid >= endMid)
+  	return minimum;
+
 	// Order points in strip area by Y coordinate
 	sortByY(vp, beginMid, endMid);
 
 	// Calculate nearest points in strip area (using npByY function)
-	npByY(vp, beginMid, endMid, min);
+	npByY(vp, beginMid, endMid, minimum);
 
 	// Reorder points in strip area back by X coordinate
-	sortByx(vp, 0, vp.size()-1);
+	sortByX(vp, beginMid, endMid);
 
-	return min;
+	return minimum;
 }
 
 
