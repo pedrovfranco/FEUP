@@ -1,8 +1,0 @@
-package recipes;
-
-public class OvenStep
-{
-	private String name;
-	private String action;
-	private int temperature;
-}

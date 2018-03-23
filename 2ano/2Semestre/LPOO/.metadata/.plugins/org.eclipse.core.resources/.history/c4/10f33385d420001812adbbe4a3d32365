@@ -1,6 +1,0 @@
-package building;
-
-public class Facility
-{
-	public abstract String getName();
-}

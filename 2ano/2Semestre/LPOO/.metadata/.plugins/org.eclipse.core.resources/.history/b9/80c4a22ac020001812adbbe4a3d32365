@@ -1,8 +1,0 @@
-package circuits;
-
-public abstract class LogicGate
-{
-	protected LogicVariable output;
-	protected LogicVariable input1;
-	protected LogicVariable input2;
-}

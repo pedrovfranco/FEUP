@@ -2,12 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="setVisible" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="setvisible"/>
+			<item value="frame.set"/>
+			<item value="panel"/>
+			<item value="focus"/>
+			<item value="~"/>
+			<item value="btn"/>
+			<item value="newga"/>
+			<item value="textArea"/>
 			<item value="nextLevel"/>
 			<item value="rounds"/>
 			<item value="roundsLef"/>
@@ -15,9 +23,9 @@
 			<item value="CheckColl"/>
 			<item value="guard"/>
 			<item value="Recipe.class"/>
-			<item value="addStep"/>
 		</list>
 		<list key="replacehistory">
+			<item value="/home/pedro"/>
 			<item value="ogre.club"/>
 			<item value="ch"/>
 			<item value="Ingredient"/>
@@ -27,7 +35,7 @@
 		<item value="307" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="464" key="DIALOG_HEIGHT"/>
-		<item value="807" key="DIALOG_X_ORIGIN"/>
-		<item value="217" key="DIALOG_Y_ORIGIN"/>
+		<item value="653" key="DIALOG_X_ORIGIN"/>
+		<item value="236" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

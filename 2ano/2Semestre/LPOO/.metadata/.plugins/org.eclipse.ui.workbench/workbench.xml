@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="20" version="2.0">
 <workbenchAdvisor/>
-<window height="1053" maximized="true" width="960" x="960" y="27">
+<window height="1045" width="960" x="960" y="27">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="293"/>
 </perspectiveBar>
 <coolbarLayout>
 <coolItem id="group.file" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="150" y="36"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="198" y="36"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.debug.ui.launch.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="162" y="36"/>
@@ -16,7 +16,7 @@
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="94" y="36"/>
-<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="94" y="36"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="119" y="36"/>
 <coolItem id="org.eclipse.team.cvs.ui.CVSActionSet" itemType="typeToolBarContribution" x="46" y="36"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="130" y="36"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
@@ -32,38 +32,13 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
-<part id="5"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestLogicCircuits.java" partName="TestLogicCircuits.java" path="/home/pedro/Desktop/git/FEUP/2ano/2Semestre/LPOO/MT2016/src/circuits/TestLogicCircuits.java" title="TestLogicCircuits.java" tooltip="MT2016/src/circuits/TestLogicCircuits.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MT2016/src/circuits/TestLogicCircuits.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1367" selectionTopPixel="60"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LogicGate.java" partName="LogicGate.java" path="/home/pedro/Desktop/git/FEUP/2ano/2Semestre/LPOO/MT2016/src/circuits/LogicGate.java" title="LogicGate.java" tooltip="MT2016/src/circuits/LogicGate.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MT2016/src/circuits/LogicGate.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="85" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LogicVariable.java" partName="LogicVariable.java" path="/home/pedro/Desktop/git/FEUP/2ano/2Semestre/LPOO/MT2016/src/circuits/LogicVariable.java" title="LogicVariable.java" tooltip="MT2016/src/circuits/LogicVariable.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MT2016/src/circuits/LogicVariable.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="95" selectionTopPixel="0"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="test.java" partName="test.java" path="/home/pedro/Desktop/git/LPOO1718_T1G7/LPOO/src/dkeep/test/test.java" title="test.java" tooltip="LPOO/src/dkeep/test/test.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LPOO/src/dkeep/test/test.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="128" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Map.java" partName="Map.java" path="/home/pedro/Desktop/git/LPOO1718_T1G7/LPOO/src/dkeep/logic/Map.java" title="Map.java" tooltip="LPOO/src/dkeep/logic/Map.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LPOO/src/dkeep/logic/Map.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1169" selectionTopPixel="379"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GameState.java" partName="GameState.java" path="/home/pedro/Desktop/git/LPOO1718_T1G7/LPOO/src/dkeep/logic/GameState.java" title="GameState.java" tooltip="LPOO/src/dkeep/logic/GameState.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LPOO/src/dkeep/logic/GameState.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="328" selectionTopPixel="67"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="/home/pedro/Desktop/git/LPOO1718_T1G7/LPOO/src/dkeep/cli/Main.java" title="Main.java" tooltip="LPOO/src/dkeep/cli/Main.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LPOO/src/dkeep/cli/Main.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="480" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -102,11 +77,6 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Errors"/>
-<category IMemento.internal.id="Warnings (23 items)"/>
-<category IMemento.internal.id="Warnings"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="989" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -114,12 +84,6 @@
 <visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
 </viewState>
-</view>
-<view id="org.eclipse.jdt.junit.ResultView" partName="JUnit">
-<viewState failuresOnly="false" layout="1" orientation="2" ratio="500" scroll="false" time="true"/>
-</view>
-<view id="org.eclipse.debug.ui.VariableView" partName="Variables">
-<viewState/>
 </view>
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
@@ -129,6 +93,12 @@
 <viewState/>
 </view>
 <view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
+<view id="org.eclipse.jdt.junit.ResultView" partName="JUnit">
+<viewState failuresOnly="false" layout="1" orientation="2" ratio="500" scroll="false" time="true"/>
+</view>
+<view id="org.eclipse.debug.ui.VariableView" partName="Variables">
+<viewState/>
+</view>
 <view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints">
 <viewState/>
 </view>
@@ -235,6 +205,7 @@
 <alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
 <alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
 <alwaysOnActionSet id="org.eclipse.jdt.junit.JUnitActionSet"/>
+<alwaysOnActionSet id="org.eclipse.wb.core.ui.actionset"/>
 <show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
 <show_view_action id="org.eclipse.jdt.ui.TypeHierarchy"/>
 <show_view_action id="org.eclipse.jdt.ui.SourceView"/>
@@ -346,25 +317,13 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT2016/src/circuits/LogicVariable.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LPOO/src/dkeep/test/test.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LPOO/src/dkeep/cli/Main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT2016/src/circuits/TestLogicCircuits.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT2016/src/circuits/LogicGate.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT2016/src/circuits/LogicVariable.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LPOO/src/dkeep/logic/Map.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LPOO/src/dkeep/logic/GameState.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LPOO/src/dkeep/cli/Main.java"/>
 </editors>
-<item historyLabel="GameState.java" index="0">
-<position info="not_deleted" x="9916" y="8"/>
-</item>
-<item historyLabel="GameState.java" index="0">
-<position info="not_deleted" x="10300" y="0"/>
-</item>
-<item historyLabel="GameState.java" index="0">
-<position info="not_deleted" x="1633" y="6"/>
-</item>
-<item historyLabel="GameState.java" index="0">
-<position info="not_deleted" x="2123" y="0"/>
-</item>
-<item historyLabel="GameState.java" index="0">
-<position info="not_deleted" x="9916" y="8"/>
-</item>
-<item historyLabel="GameState.java" index="0">
-<position info="not_deleted" x="5040" y="17"/>
-</item>
 <item historyLabel="GameState.java" index="0">
 <position info="not_deleted" x="5911" y="0"/>
 </item>
@@ -494,8 +453,26 @@
 <item historyLabel="Map.java" index="2">
 <position info="not_deleted" x="1169" y="0"/>
 </item>
-<item active="true" historyLabel="test.java" index="7">
+<item historyLabel="test.java" index="7">
 <position info="not_deleted" x="149" y="0"/>
+</item>
+<item historyLabel="TestLogicCircuits.java" index="9">
+<position info="not_deleted" x="1367" y="0"/>
+</item>
+<item historyLabel="LogicGate.java" index="10">
+<position info="not_deleted" x="85" y="0"/>
+</item>
+<item historyLabel="LogicVariable.java" index="11">
+<position info="not_deleted" x="95" y="0"/>
+</item>
+<item historyLabel="Map.java" index="12">
+<position info="not_deleted" x="1169" y="0"/>
+</item>
+<item historyLabel="GameState.java" index="13">
+<position info="not_deleted" x="328" y="0"/>
+</item>
+<item active="true" historyLabel="Main.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -514,14 +491,14 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="LPOO/src/dkeep/cli/Main.java">
+<persistable path="/LPOO/src/dkeep/cli/Main.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GameState.java" tooltip="LPOO/src/dkeep/logic/GameState.java">
 <persistable path="/LPOO/src/dkeep/logic/GameState.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Map.java" tooltip="LPOO/src/dkeep/logic/Map.java">
 <persistable path="/LPOO/src/dkeep/logic/Map.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="LPOO/src/dkeep/cli/Main.java">
-<persistable path="/LPOO/src/dkeep/cli/Main.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="test.java" tooltip="LPOO/src/dkeep/test/test.java">
 <persistable path="/LPOO/src/dkeep/test/test.java"/>

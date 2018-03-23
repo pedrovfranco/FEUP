@@ -1,7 +1,0 @@
-package circuits;
-
-public class LogicVariable
-{
-	private String name;
-	private boolean value;
-}

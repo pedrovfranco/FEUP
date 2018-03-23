@@ -1,9 +1,0 @@
-package circuits;
-
-public class GateOr extends LogicGate
-{
-	public GateOr(LogicVariable output, LogicVariable input1, LogicVariable input2)
-	{
-		super(output, input1, input2);
-	}
-}
