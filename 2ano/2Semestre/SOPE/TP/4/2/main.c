@@ -6,15 +6,15 @@
 
 void sigint_handler(int signo)
 {
- printf("Entering SIGINT handler ...\n");
- sleep(5);
- printf("Exiting SIGINT handler ...\n");
+	printf("Entering SIGINT handler ...\n");
+	sleep(5);
+	printf("Exiting SIGINT handler ...\n");
 }
 
 void sigterm_handler(int signo)
 {
- printf("Entering SIGTERM handler ...\n");
- printf("Exiting SIGTERM handler ...\n");
+	printf("Entering SIGTERM handler ...\n");
+	printf("Exiting SIGTERM handler ...\n");
 }
 
 int a(int argc, char const *argv[])

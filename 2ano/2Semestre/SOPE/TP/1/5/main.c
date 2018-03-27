@@ -56,5 +56,5 @@ int d(int argc, char *argv[], char **envp)
 int main (int argc, char *argv[], char *envp[])
 {
 
-	return d(argc, argv, envp);
+	return c(argc, argv, envp);
 }
