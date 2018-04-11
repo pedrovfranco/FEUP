@@ -2,29 +2,34 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="setVisible" key="selection"/>
+		<item value="Floor" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Pawn"/>
+			<item value="count"/>
+			<item value="setGameState"/>
+			<item value="&apos;k&apos;"/>
+			<item value="nextLevel"/>
+			<item value="update"/>
+			<item value="mapEditor"/>
+			<item value="Load Game"/>
+			<item value="New Game"/>
+			<item value="enable"/>
+			<item value="ontop"/>
+			<item value="graphics"/>
+			<item value="/Users/ff/eclipse-workspace/LPOO/src/dkeep/gui/"/>
 			<item value="setvisible"/>
 			<item value="frame.set"/>
-			<item value="panel"/>
-			<item value="focus"/>
-			<item value="~"/>
-			<item value="btn"/>
-			<item value="newga"/>
-			<item value="textArea"/>
-			<item value="nextLevel"/>
-			<item value="rounds"/>
-			<item value="roundsLef"/>
-			<item value="ogre"/>
-			<item value="CheckColl"/>
-			<item value="guard"/>
-			<item value="Recipe.class"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Floor"/>
+			<item value="Queen"/>
+			<item value="King"/>
+			<item value="Bishop"/>
+			<item value=""/>
 			<item value="/home/pedro"/>
 			<item value="ogre.club"/>
 			<item value="ch"/>
@@ -35,7 +40,7 @@
 		<item value="307" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="464" key="DIALOG_HEIGHT"/>
-		<item value="653" key="DIALOG_X_ORIGIN"/>
-		<item value="236" key="DIALOG_Y_ORIGIN"/>
+		<item value="1236" key="DIALOG_X_ORIGIN"/>
+		<item value="180" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
