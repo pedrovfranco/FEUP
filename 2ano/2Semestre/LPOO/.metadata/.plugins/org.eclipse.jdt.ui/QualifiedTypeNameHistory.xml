@@ -19,5 +19,7 @@
 <fullyQualifiedTypeName name="dkeep.logic.Map"/>
 <fullyQualifiedTypeName name="javax.swing.JPanel"/>
 <fullyQualifiedTypeName name="java.awt.event.MouseListener"/>
+<fullyQualifiedTypeName name="chess.logic.GameState"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.ws.message.RelatesToHeader"/>
 </qualifiedTypeNameHistroy>

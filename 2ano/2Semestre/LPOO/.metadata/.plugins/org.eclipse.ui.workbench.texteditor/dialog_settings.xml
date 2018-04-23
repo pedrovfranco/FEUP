@@ -2,12 +2,17 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Floor" key="selection"/>
+		<item value="foo" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="foo"/>
+			<item value="map.getMap()[foo[0]][foo[1]]"/>
+			<item value="foo[0], foo[1]"/>
+			<item value="y"/>
+			<item value="x"/>
 			<item value="Pawn"/>
 			<item value="count"/>
 			<item value="setGameState"/>
@@ -18,13 +23,13 @@
 			<item value="Load Game"/>
 			<item value="New Game"/>
 			<item value="enable"/>
-			<item value="ontop"/>
-			<item value="graphics"/>
-			<item value="/Users/ff/eclipse-workspace/LPOO/src/dkeep/gui/"/>
-			<item value="setvisible"/>
-			<item value="frame.set"/>
 		</list>
 		<list key="replacehistory">
+			<item value="absolutePos"/>
+			<item value="map.getMap()[foo[1]][foo[0]]"/>
+			<item value="foo"/>
+			<item value="pair[1]"/>
+			<item value="pair[0]"/>
 			<item value="Floor"/>
 			<item value="Queen"/>
 			<item value="King"/>
