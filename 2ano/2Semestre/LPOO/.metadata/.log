@@ -1913,3 +1913,928 @@ java.net.UnknownHostException: download.eclipse.org
 	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:263)
 	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SESSION 2018-04-24 16:31:21.796 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_162
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-04-24 16:31:33.887
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Connect to dev.eclipse.org:443 [dev.eclipse.org/198.41.30.200] failed: connect timed out. ; version: 2.0.6.v20170906-1226
+!STACK 0
+org.apache.http.conn.ConnectTimeoutException: Connect to dev.eclipse.org:443 [dev.eclipse.org/198.41.30.200] failed: connect timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:150)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.http.client.fluent.Request.internalExecute(Request.java:173)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:262)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:170)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:64)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:337)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	... 17 more
+
+!ENTRY org.eclipse.jdt.core 4 969 2018-04-24 16:32:50.590
+!MESSAGE my-gdx-game-core does not exist
+
+!ENTRY org.eclipse.jdt.core 4 969 2018-04-24 16:32:54.481
+!MESSAGE my-gdx-game-core does not exist
+
+!ENTRY org.eclipse.jdt.core 4 969 2018-04-24 16:39:26.801
+!MESSAGE my-gdx-game-core does not exist
+
+!ENTRY org.eclipse.jdt.core 4 969 2018-04-24 16:39:29.045
+!MESSAGE my-gdx-game-core does not exist
+
+!ENTRY org.eclipse.jdt.core 4 969 2018-04-24 16:39:30.849
+!MESSAGE my-gdx-game-core does not exist
+
+!ENTRY org.eclipse.jdt.core 4 969 2018-04-24 16:45:13.645
+!MESSAGE my-gdx-game-core does not exist
+
+!ENTRY org.eclipse.jdt.core 4 969 2018-04-24 16:45:47.550
+!MESSAGE my-gdx-game-core does not exist
+
+!ENTRY org.eclipse.jdt.core 4 969 2018-04-24 16:45:51.154
+!MESSAGE my-gdx-game-core does not exist
+!SESSION 2018-04-24 16:45:59.365 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_162
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-04-24 16:46:10.713
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Service Temporarily Unavailable. ; version: 2.0.6.v20170906-1226
+!STACK 0
+org.apache.http.client.HttpResponseException: Service Temporarily Unavailable
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseHandler.handleResponse(HttpResponses.java:66)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseStringHandler.handleResponse(HttpResponses.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseStringHandler.handleResponse(HttpResponses.java:1)
+	at org.apache.http.client.fluent.Response.handleResponse(Response.java:90)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses.getContentWithProgress(HttpResponses.java:51)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:65)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.buildship.core 4 0 2018-04-24 16:46:11.498
+!MESSAGE Launching Gradle tasks failed due to an unexpected error.
+!STACK 0
+java.util.concurrent.RejectedExecutionException: Task org.gradle.internal.concurrent.StoppableExecutorImpl$1@1fe3f438 rejected from java.util.concurrent.ThreadPoolExecutor@85401c2[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 1]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1379)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl.execute(StoppableExecutorImpl.java:38)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConsumerActionExecutor$1.run(DefaultAsyncConsumerActionExecutor.java:51)
+	at org.gradle.internal.Factories$1.create(Factories.java:25)
+	at org.gradle.internal.concurrent.ServiceLifecycle.use(ServiceLifecycle.java:69)
+	at org.gradle.internal.concurrent.ServiceLifecycle.use(ServiceLifecycle.java:46)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConsumerActionExecutor.run(DefaultAsyncConsumerActionExecutor.java:49)
+	at org.gradle.tooling.internal.consumer.DefaultBuildLauncher.run(DefaultBuildLauncher.java:83)
+	at org.gradle.tooling.internal.consumer.DefaultBuildLauncher.run(DefaultBuildLauncher.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.buildship.core.workspace.internal.ConnectionAwareLauncherProxy.invokeRun(ConnectionAwareLauncherProxy.java:170)
+	at org.eclipse.buildship.core.workspace.internal.ConnectionAwareLauncherProxy.invoke(ConnectionAwareLauncherProxy.java:160)
+	at com.sun.proxy.$Proxy31.run(Unknown Source)
+	at org.eclipse.buildship.core.launch.RunGradleBuildLaunchRequestJob.executeLaunch(RunGradleBuildLaunchRequestJob.java:86)
+	at org.eclipse.buildship.core.launch.RunGradleBuildLaunchRequestJob.executeLaunch(RunGradleBuildLaunchRequestJob.java:45)
+	at org.eclipse.buildship.core.launch.BaseLaunchRequestJob.runToolingApiJob(BaseLaunchRequestJob.java:82)
+	at org.eclipse.buildship.core.util.progress.ToolingApiJob$1.run(ToolingApiJob.java:73)
+	at org.eclipse.buildship.core.util.progress.ToolingApiInvoker.invoke(ToolingApiInvoker.java:62)
+	at org.eclipse.buildship.core.util.progress.ToolingApiJob.run(ToolingApiJob.java:70)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.core.jobs 2 2 2018-04-24 16:46:14.720
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.eclemma.internal.core.launching.AgentServer
+
+!ENTRY org.eclipse.jdt.core 4 969 2018-04-24 16:48:44.938
+!MESSAGE my-gdx-game-core does not exist
+
+!ENTRY org.eclipse.jdt.core 4 969 2018-04-24 16:51:34.246
+!MESSAGE my-gdx-game-core does not exist
+
+!ENTRY org.eclipse.jdt.core 4 969 2018-04-24 16:51:57.751
+!MESSAGE my-gdx-game-core does not exist
+
+!ENTRY org.eclipse.jdt.core 4 969 2018-04-24 16:52:05.425
+!MESSAGE my-gdx-game-core does not exist
+
+!ENTRY org.eclipse.jdt.core 4 969 2018-04-24 16:52:23.669
+!MESSAGE my-gdx-game-core does not exist
+!SESSION 2018-04-24 16:55:15.789 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_162
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.core.resources 4 567 2018-04-24 16:55:19.012
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2018-04-24 16:55:19.012
+!MESSAGE Could not read metadata for 'my-gdx-game-desktop'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'my-gdx-game-desktop' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:901)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:904)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:884)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:735)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1587)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2399)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2156)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:467)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:779)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:772)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:729)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:933)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:468)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:103)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:328)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:368)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:442)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:395)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:387)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:150)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1472)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2018-04-24 16:55:19.013
+!MESSAGE The project description file (.project) for 'my-gdx-game-desktop' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2018-04-24 16:55:19.013
+!MESSAGE Could not read metadata for 'test'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'test' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:901)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:904)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:884)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:735)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1587)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2399)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2156)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:467)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:779)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:772)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:729)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:933)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:468)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:103)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:328)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:368)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:442)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:395)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:387)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:150)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1472)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2018-04-24 16:55:19.014
+!MESSAGE The project description file (.project) for 'test' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-04-24 16:55:25.147
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Service Temporarily Unavailable. ; version: 2.0.6.v20170906-1226
+!STACK 0
+org.apache.http.client.HttpResponseException: Service Temporarily Unavailable
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseHandler.handleResponse(HttpResponses.java:66)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseStringHandler.handleResponse(HttpResponses.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseStringHandler.handleResponse(HttpResponses.java:1)
+	at org.apache.http.client.fluent.Response.handleResponse(Response.java:90)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses.getContentWithProgress(HttpResponses.java:51)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:65)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.jdt.launching 4 107 2018-04-24 17:02:15.741
+!MESSAGE Launch configuration Box2DBuild references non-existing project my-gdx-game-desktop.
+
+!ENTRY org.eclipse.jdt.launching 4 107 2018-04-24 17:02:25.403
+!MESSAGE Launch configuration GdxBuild references non-existing project my-gdx-game-desktop.
+
+!ENTRY org.eclipse.core.jobs 4 2 2018-04-24 17:07:58.396
+!MESSAGE An internal error occurred during: "Launching New_configuration (1)".
+!STACK 0
+java.lang.RuntimeException: Missing 'wip backend' parameter in launch config
+	at org.eclipse.wst.jsdt.chromium.debug.ui.launcher.WipLaunchType.createConnectionToRemote(WipLaunchType.java:32)
+	at org.eclipse.wst.jsdt.chromium.debug.ui.launcher.LaunchTypeBase.launch(LaunchTypeBase.java:69)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 17:12:32.204
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.eclipse.jdt.launching 4 107 2018-04-24 17:12:36.930
+!MESSAGE Launch configuration GdxBuild references non-existing project my-gdx-game-desktop.
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-24 17:19:38.946
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-24 17:19:38.946
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 17:40:24.109
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 17:41:07.214
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 17:41:21.559
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 17:43:39.937
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-24 17:51:53.888
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-24 17:51:53.889
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:29:32.509
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:45:37.977
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:50:08.637
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:50:50.697
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:50:52.322
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:51:17.593
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:51:47.211
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:52:19.430
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:52:38.683
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:52:57.355
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:53:38.170
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:55:21.434
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:55:39.836
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:55:47.651
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:56:20.522
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:56:34.444
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:56:45.711
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 18:56:46.889
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+!SESSION 2018-04-24 19:09:51.273 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_162
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-04-24 19:10:01.356
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Service Temporarily Unavailable. ; version: 2.0.6.v20170906-1226
+!STACK 0
+org.apache.http.client.HttpResponseException: Service Temporarily Unavailable
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseHandler.handleResponse(HttpResponses.java:66)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseStringHandler.handleResponse(HttpResponses.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseStringHandler.handleResponse(HttpResponses.java:1)
+	at org.apache.http.client.fluent.Response.handleResponse(Response.java:90)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses.getContentWithProgress(HttpResponses.java:51)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:65)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-24 19:11:25.312
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-24 19:11:25.312
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 19:12:56.571
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 19:14:21.584
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 19:18:15.971
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-24 19:25:00.883
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+!SESSION 2018-04-25 16:18:12.103 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_162
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-04-25 16:18:35.077
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Read timed out. ; version: 2.0.6.v20170906-1226
+!STACK 0
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:940)
+	at sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:282)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:140)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:57)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:167)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:271)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.http.client.fluent.Request.internalExecute(Request.java:173)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:262)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:170)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:64)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-25 16:19:19.245
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-25 16:19:19.245
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-25 16:22:55.739
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-25 16:43:36.617
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-25 16:44:25.488
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-25 16:47:19.520
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-25 16:47:19.521
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-25 17:04:16.846
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+!SESSION 2018-04-25 17:19:45.747 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_162
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-04-25 17:19:49.008
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-04-25 17:20:06.646
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Read timed out. ; version: 2.0.6.v20170906-1226
+!STACK 0
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:940)
+	at sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:282)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:140)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:57)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:167)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:271)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.http.client.fluent.Request.internalExecute(Request.java:173)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:262)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:170)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:64)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-25 17:21:35.822
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-25 17:21:35.822
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-25 17:23:18.705
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-25 17:23:18.706
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-25 17:39:01.032
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-25 18:22:57.968
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-25 18:22:59.611
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.eclipse.core.jobs 4 2 2018-04-25 19:25:39.180
+!MESSAGE An internal error occurred during: "org.eclipse.eclemma.internal.core.launching.AgentServer".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.eclemma.internal.ui.UIPreferences.getPreferenceStore(UIPreferences.java:114)
+	at org.eclipse.eclemma.internal.ui.UIPreferences.access$0(UIPreferences.java:113)
+	at org.eclipse.eclemma.internal.ui.UIPreferences$1.getActivateNewSessions(UIPreferences.java:56)
+	at org.eclipse.eclemma.internal.core.launching.AgentServer.run(AgentServer.java:123)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SESSION 2018-04-25 19:26:27.710 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_162
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2018-04-25 19:26:41.080
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.eclipse.e4.core.di.InjectionException: java.util.concurrent.TimeoutException: Timed out waiting for org.eclipse.epp.logging.aeri.ide.server ServerConnection [STOPPING] to reach a terminal state. Current state: STOPPING
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:65)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:990)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.disposed(InjectorImpl.java:450)
+	at org.eclipse.e4.core.internal.di.Requestor.disposed(Requestor.java:156)
+	at org.eclipse.e4.core.internal.contexts.ContextObjectSupplier$ContextInjectionListener.update(ContextObjectSupplier.java:78)
+	at org.eclipse.e4.core.internal.contexts.TrackableComputationExt.update(TrackableComputationExt.java:111)
+	at org.eclipse.e4.core.internal.contexts.TrackableComputationExt.handleInvalid(TrackableComputationExt.java:74)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.dispose(EclipseContext.java:178)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.dispose(EclipseContext.java:163)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.dispose(EclipseContext.java:163)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.dispose(EclipseContext.java:163)
+	at org.eclipse.e4.core.internal.contexts.osgi.EclipseContextOSGi.dispose(EclipseContextOSGi.java:99)
+	at org.eclipse.e4.core.internal.contexts.osgi.EclipseContextOSGi.bundleChanged(EclipseContextOSGi.java:141)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:908)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEventPrivileged(EquinoxEventPublisher.java:213)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEvent(EquinoxEventPublisher.java:120)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEvent(EquinoxEventPublisher.java:112)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor.publishModuleEvent(EquinoxContainerAdaptor.java:168)
+	at org.eclipse.osgi.container.Module.publishEvent(Module.java:476)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:634)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.TimeoutException: Timed out waiting for org.eclipse.epp.logging.aeri.ide.server ServerConnection [STOPPING] to reach a terminal state. Current state: STOPPING
+	at com.google.common.util.concurrent.AbstractService.awaitTerminated(AbstractService.java:317)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitTerminated(AbstractIdleService.java:199)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.diStop(ServerConnection.java:392)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
+	... 25 more
+!SESSION 2018-04-25 19:27:31.101 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_162
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-04-25 19:27:51.265
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Read timed out. ; version: 2.0.6.v20170906-1226
+!STACK 0
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:940)
+	at sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:282)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:140)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:57)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:167)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:271)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.http.client.fluent.Request.internalExecute(Request.java:173)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:262)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:170)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:64)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.debug.core 4 2 2018-04-25 19:40:13.049
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+org.eclipse.buildship.core.GradlePluginsRuntimeException: Cannot resolve working directory expression ${workspace_loc:/test}.
+	at org.eclipse.buildship.core.launch.GradleRunConfigurationAttributes.getWorkingDir(GradleRunConfigurationAttributes.java:95)
+	at org.eclipse.buildship.core.configuration.internal.DefaultConfigurationManager.loadRunConfiguration(DefaultConfigurationManager.java:163)
+	at org.eclipse.buildship.ui.launch.ConsoleShowingLaunchListener.convertToGradleRunConfigurationAttributes(ConsoleShowingLaunchListener.java:69)
+	at org.eclipse.buildship.ui.launch.ConsoleShowingLaunchListener.launchAdded(ConsoleShowingLaunchListener.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.run(LaunchManager.java:446)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.notify(LaunchManager.java:433)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(LaunchManager.java:1043)
+	at org.eclipse.debug.internal.core.LaunchManager.addLaunch(LaunchManager.java:703)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:834)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.debug.core 4 120 2018-04-25 19:40:13.076
+!MESSAGE An exception occurred during launch change notification.
+!STACK 0
+org.eclipse.buildship.core.GradlePluginsRuntimeException: Cannot resolve working directory expression ${workspace_loc:/test}.
+	at org.eclipse.buildship.core.launch.GradleRunConfigurationAttributes.getWorkingDir(GradleRunConfigurationAttributes.java:95)
+	at org.eclipse.buildship.core.configuration.internal.DefaultConfigurationManager.loadRunConfiguration(DefaultConfigurationManager.java:163)
+	at org.eclipse.buildship.ui.launch.ConsoleShowingLaunchListener.convertToGradleRunConfigurationAttributes(ConsoleShowingLaunchListener.java:69)
+	at org.eclipse.buildship.ui.launch.ConsoleShowingLaunchListener.launchAdded(ConsoleShowingLaunchListener.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.run(LaunchManager.java:446)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.notify(LaunchManager.java:433)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(LaunchManager.java:1043)
+	at org.eclipse.debug.internal.core.LaunchManager.addLaunch(LaunchManager.java:703)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:834)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.core.jobs 4 2 2018-04-25 19:40:13.109
+!MESSAGE An internal error occurred during: "Launching test - (default tasks)".
+!STACK 0
+org.eclipse.buildship.core.GradlePluginsRuntimeException: Cannot resolve working directory expression ${workspace_loc:/test}.
+	at org.eclipse.buildship.core.launch.GradleRunConfigurationAttributes.getWorkingDir(GradleRunConfigurationAttributes.java:95)
+	at org.eclipse.buildship.core.configuration.internal.DefaultConfigurationManager.loadRunConfiguration(DefaultConfigurationManager.java:163)
+	at org.eclipse.buildship.core.launch.RunGradleBuildLaunchRequestJob.<init>(RunGradleBuildLaunchRequestJob.java:53)
+	at org.eclipse.buildship.core.launch.GradleRunConfigurationDelegate.launch(GradleRunConfigurationDelegate.java:44)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.debug.core 4 2 2018-04-25 19:42:32.206
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+org.eclipse.buildship.core.GradlePluginsRuntimeException: Cannot resolve working directory expression ${workspace_loc:/test}.
+	at org.eclipse.buildship.core.launch.GradleRunConfigurationAttributes.getWorkingDir(GradleRunConfigurationAttributes.java:95)
+	at org.eclipse.buildship.core.configuration.internal.DefaultConfigurationManager.loadRunConfiguration(DefaultConfigurationManager.java:163)
+	at org.eclipse.buildship.ui.launch.ConsoleShowingLaunchListener.convertToGradleRunConfigurationAttributes(ConsoleShowingLaunchListener.java:69)
+	at org.eclipse.buildship.ui.launch.ConsoleShowingLaunchListener.launchAdded(ConsoleShowingLaunchListener.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.run(LaunchManager.java:446)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.notify(LaunchManager.java:433)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(LaunchManager.java:1043)
+	at org.eclipse.debug.internal.core.LaunchManager.addLaunch(LaunchManager.java:703)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:834)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.debug.core 4 120 2018-04-25 19:42:32.209
+!MESSAGE An exception occurred during launch change notification.
+!STACK 0
+org.eclipse.buildship.core.GradlePluginsRuntimeException: Cannot resolve working directory expression ${workspace_loc:/test}.
+	at org.eclipse.buildship.core.launch.GradleRunConfigurationAttributes.getWorkingDir(GradleRunConfigurationAttributes.java:95)
+	at org.eclipse.buildship.core.configuration.internal.DefaultConfigurationManager.loadRunConfiguration(DefaultConfigurationManager.java:163)
+	at org.eclipse.buildship.ui.launch.ConsoleShowingLaunchListener.convertToGradleRunConfigurationAttributes(ConsoleShowingLaunchListener.java:69)
+	at org.eclipse.buildship.ui.launch.ConsoleShowingLaunchListener.launchAdded(ConsoleShowingLaunchListener.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.run(LaunchManager.java:446)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.notify(LaunchManager.java:433)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(LaunchManager.java:1043)
+	at org.eclipse.debug.internal.core.LaunchManager.addLaunch(LaunchManager.java:703)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:834)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.core.jobs 4 2 2018-04-25 19:42:32.270
+!MESSAGE An internal error occurred during: "Launching test - (default tasks)".
+!STACK 0
+org.eclipse.buildship.core.GradlePluginsRuntimeException: Cannot resolve working directory expression ${workspace_loc:/test}.
+	at org.eclipse.buildship.core.launch.GradleRunConfigurationAttributes.getWorkingDir(GradleRunConfigurationAttributes.java:95)
+	at org.eclipse.buildship.core.configuration.internal.DefaultConfigurationManager.loadRunConfiguration(DefaultConfigurationManager.java:163)
+	at org.eclipse.buildship.core.launch.RunGradleBuildLaunchRequestJob.<init>(RunGradleBuildLaunchRequestJob.java:53)
+	at org.eclipse.buildship.core.launch.GradleRunConfigurationDelegate.launch(GradleRunConfigurationDelegate.java:44)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-25 19:45:06.318
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-25 19:47:54.205
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-25 19:50:57.199
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+!SESSION 2018-04-25 20:08:15.269 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_162
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-04-25 20:08:24.644
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Service Temporarily Unavailable. ; version: 2.0.6.v20170906-1226
+!STACK 0
+org.apache.http.client.HttpResponseException: Service Temporarily Unavailable
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseHandler.handleResponse(HttpResponses.java:66)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseStringHandler.handleResponse(HttpResponses.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseStringHandler.handleResponse(HttpResponses.java:1)
+	at org.apache.http.client.fluent.Response.handleResponse(Response.java:90)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses.getContentWithProgress(HttpResponses.java:51)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:65)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:748)
+!SESSION 2018-04-25 20:13:51.926 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_162
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-04-25 20:14:14.780
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Read timed out. ; version: 2.0.6.v20170906-1226
+!STACK 0
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:940)
+	at sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:282)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:140)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:57)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:167)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:271)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.http.client.fluent.Request.internalExecute(Request.java:173)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:262)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:170)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:64)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:748)
+!SESSION 2018-04-25 22:19:13.611 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_162
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-25 22:25:34.195
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-25 22:25:34.199
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-25 23:12:43.412
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-25 23:58:02.882
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-25 23:58:02.883
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+!SESSION 2018-04-26 00:43:26.824 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_162
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jdt.debug 4 120 2018-04-26 00:46:27.465
+!MESSAGE Exception processing async thread queue
+!SUBENTRY 1 org.eclipse.jdt.debug 4 120 2018-04-26 00:46:27.465
+!MESSAGE Exception processing async thread queue
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: -1
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.EvaluationSourceGenerator.getCompleteSnippet(EvaluationSourceGenerator.java:142)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.EvaluationSourceGenerator.<init>(EvaluationSourceGenerator.java:68)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.ASTEvaluationEngine.getCompiledExpression(ASTEvaluationEngine.java:333)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.ASTEvaluationEngine.evaluate(ASTEvaluationEngine.java:135)
+	at org.eclipse.jdt.internal.debug.ui.JavaWatchExpressionDelegate$EvaluationRunnable.run(JavaWatchExpressionDelegate.java:150)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread$ThreadJob.run(JDIThread.java:3529)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jdt.debug 4 120 2018-04-26 00:46:27.860
+!MESSAGE Exception processing async thread queue
+!SUBENTRY 1 org.eclipse.jdt.debug 4 120 2018-04-26 00:46:27.860
+!MESSAGE Exception processing async thread queue
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: -1
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.EvaluationSourceGenerator.getCompleteSnippet(EvaluationSourceGenerator.java:142)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.EvaluationSourceGenerator.<init>(EvaluationSourceGenerator.java:68)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.ASTEvaluationEngine.getCompiledExpression(ASTEvaluationEngine.java:333)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.ASTEvaluationEngine.evaluate(ASTEvaluationEngine.java:135)
+	at org.eclipse.jdt.internal.debug.ui.JavaWatchExpressionDelegate$EvaluationRunnable.run(JavaWatchExpressionDelegate.java:150)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread$ThreadJob.run(JDIThread.java:3529)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-26 01:12:33.488
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-26 01:12:33.488
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-26 01:26:14.298
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-26 01:26:53.278
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-26 01:27:59.919
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-26 01:28:24.494
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-26 01:28:44.041
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-26 01:31:18.942
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-26 01:34:12.052
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-26 01:37:53.923
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]
+!SESSION 2018-04-26 02:43:14.617 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_162
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-26 02:48:36.354
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-26 02:48:36.359
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.pitest.pitclipse.core 1 0 2018-04-26 03:48:22.252
+!MESSAGE Classpath: [/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar, /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar, /home/pedro/Desktop/git/FEUP-LPOO/libgdx/chess/core/bin, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar, /home/pedro/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar, /home/pedro/eclipse/plugins/org.pitest.command-line-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.html-report-osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.osgi_1.1.9.jar, /home/pedro/eclipse/plugins/org.pitest.pitrunner_1.1.6.201607050705.jar, /home/pedro/eclipse/plugins/org.pitest.guava-shade-osgi_18.0.0.jar]

@@ -3,7 +3,18 @@
 	<section name="org.eclipse.jdt.internal.debug.ui.ExpressionInformationControlCreator$ExpressionInformationControl">
 		<item value="500" key="SashWeightTree"/>
 		<item value="500" key="SashWeightDetails"/>
-		<item value="658" key="WIDTH"/>
-		<item value="198" key="HEIGHT"/>
+		<item value="654" key="WIDTH"/>
+		<item value="268" key="HEIGHT"/>
+	</section>
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode&gt;=my-gdx-game-desktop/src&amp;lt;com.mygdx.game.desktop{DesktopLauncher.java[DesktopLauncher&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=my-gdx-game-desktop/\/home\/pedro\/.gradle\/caches\/modules-2\/files-2.1\/com.badlogicgames.gdx\/gdx-box2d\/1.9.8\/6f0497b7958216464101adfb7bdc3a0f7b88d6d3\/gdx-box2d-1.9.8.jar&amp;lt;com.badlogic.gdx.physics.box2d.utils(Box2DBuild.class[Box2DBuild&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=my-gdx-game-desktop/\/home\/pedro\/.gradle\/caches\/modules-2\/files-2.1\/com.badlogicgames.gdx\/gdx\/1.9.8\/a35a0076fbce873f9c2d5a1a1c8066244231bb3c\/gdx-1.9.8.jar&amp;lt;com.badlogic.gdx.utils(GdxBuild.class[GdxBuild&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=lpoo-chess-desktop/src&amp;lt;lpoo.chess.desktop{DesktopLauncher.java[DesktopLauncher&lt;/infoNode&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="660" key="DIALOG_X_ORIGIN"/>
+			<item value="193" key="DIALOG_Y_ORIGIN"/>
+		</section>
 	</section>
 </section>
