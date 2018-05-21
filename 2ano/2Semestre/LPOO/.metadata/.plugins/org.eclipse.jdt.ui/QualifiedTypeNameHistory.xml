@@ -37,4 +37,9 @@
 <fullyQualifiedTypeName name="java.awt.RadialGradientPaint"/>
 <fullyQualifiedTypeName name="lpoo.chess.logic.Pair"/>
 <fullyQualifiedTypeName name="lpoo.chess.logic.Floor"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.Game"/>
+<fullyQualifiedTypeName name="model.GameState"/>
+<fullyQualifiedTypeName name="model.Chess"/>
+<fullyQualifiedTypeName name="view.Graphics"/>
+<fullyQualifiedTypeName name="controller.MouseHandler"/>
 </qualifiedTypeNameHistroy>

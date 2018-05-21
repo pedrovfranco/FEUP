@@ -19,6 +19,13 @@
 	<item value="/home/pedro/Desktop/git/FEUP-LPOO" key="org.eclipse.jdt.ui.last.external.project"/>
 	<list key="SearchScopeActionGroup.working_set">
 	</list>
+	<section name="org.eclipse.ltk.ui.refactoring.settings">
+		<item value="false" key="updateQualifiedNames"/>
+		<item value="*" key="patterns"/>
+		<item value="false" key="updateSimilarElements"/>
+		<item value="1" key="updateSimilarElementsMatchStrategy"/>
+		<item value="false" key="updateTextualMatches"/>
+	</section>
 	<section name="SearchInDialog">
 		<item value="true" key="SearchInProjects"/>
 		<item value="true" key="SearchInAppLibs"/>
@@ -104,8 +111,8 @@
 		<item value="11" key="INCLUDE_MASK"/>
 	</section>
 	<section name="completion_proposal_size">
-		<item value="261" key="size.y"/>
-		<item value="392" key="size.x"/>
+		<item value="212" key="size.y"/>
+		<item value="380" key="size.x"/>
 	</section>
 	<section name="JavaElementSearchActions">
 	</section>
