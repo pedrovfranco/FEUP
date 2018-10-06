@@ -1,0 +1,145 @@
+body > header
+{
+    background-color: #046DD5;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body > header a:link
+{
+    text-decoration: none;
+    color: white;
+}
+
+body > header a:visited
+{
+    text-decoration: none;
+    color: white;
+}
+
+body > header > h1
+{
+    padding-top: 1em;
+    padding-bottom: 0px;
+    padding-left: 1em;
+    padding-right: 0px;
+
+    font-size: 30px;
+}
+
+body > header > h2
+{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 2em;
+    padding-right: 0px;
+
+    font-size: 15px;
+}
+
+body > header > div
+{
+    padding-top: 0px;
+    padding-bottom: 0em;
+    padding-left: 2em;
+    padding-right: 0px;
+}
+
+#hamburger
+{
+    display: none;
+}
+
+#menu > ul
+{
+    list-style: none;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+
+    text-align: center;
+}
+
+#menu a
+{
+    color: black;
+}
+
+#menu li
+{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#menu > ul > :nth-child(1)
+{
+    border-top: 6px solid #E1493E;
+}
+
+#menu > ul > :nth-child(2)
+{
+    border-top: 6px solid #8ABA56;
+}
+
+#menu > ul > :nth-child(3)
+{
+    border-top: 6px solid #5B4282;
+}
+
+#menu > ul > :nth-child(4)
+{
+    border-top: 6px solid #FF8932;
+}
+
+#menu > ul > :nth-child(5)
+{
+    border-top: 6px solid #19B6E9;
+}
+
+#menu > ul > :nth-child(6)
+{
+    border-top: 6px solid #E84C8B;
+}
+
+#menu > ul a:link
+{
+    text-decoration: none;
+}
+
+#menu > ul a:visited
+{
+    text-decoration: none;
+}
+
+
+#related
+{
+    background-color: #2A2F33;
+}
+
+#related h1
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 21px;
+}
+
+#related a:link
+{
+    text-decoration: none;
+    color: white;
+}
+
+#related a:visited
+{
+    text-decoration: none;
+    color: white;
+}
+
+#related p
+{
+    text-decoration:none;
+    color: white;
+    font-family : Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
