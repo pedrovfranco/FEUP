@@ -284,6 +284,7 @@
 			<texture id="none" length_s="1" length_t="1" />
 			<children>
 				<componentref id="1"/>
+				<componentref id="2"/>
 			</children>
 		</component>
 
@@ -298,8 +299,6 @@
 			<texture id="none" length_s="1" length_t="1" />
 			<children>
 				<componentref id="tree"/>
-				<primitiveref id="cylinder"/>
-
 			</children>
 		</component>
 
@@ -317,7 +316,22 @@
 
 		<component id="2">   
 			<transformation>
-				<translate x="5" y="10" z="5" />
+				<interact scale="1.2" />
+			</transformation>
+			<materials>
+				<material id="inherit" />
+			</materials>
+			<texture id="none" length_s="1" length_t="1" />
+			<children>
+				<componentref id="3"/>
+				<primitiveref id="cylinder"/>
+
+			</children>
+		</component>
+
+		<component id="3">   
+			<transformation>
+				<translate x="3" y="0" z="3" />
 			</transformation>
 			<materials>
 				<material id="inherit" />

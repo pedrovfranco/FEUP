@@ -1167,6 +1167,8 @@ var COMPONENTS_INDEX = 9;
 		var numComponents = 0;
 		var componentId;
 
+		
+
 		for (var i = 0; i < children.length; i++)
 		{
 			if (children[i].nodeName == "component")
@@ -1180,6 +1182,8 @@ var COMPONENTS_INDEX = 9;
 
 				componentsTemp[componentId] = [];
 				componentsTemp[componentId][3] = null;
+
+				var interactScaleFactor = null;
 
 				grandChildren = children[i].children;
 
@@ -1251,6 +1255,13 @@ var COMPONENTS_INDEX = 9;
 									return "Unable to parse transformation id=\"" + transformationId + "\" on the \"" + grandChildren[j].nodeName + "\" node";
 
 								mat4.scale(transformationMatrix, transformationMatrix, vec3.fromValues(x, y, z));
+							}
+							else if (grandGrandChildren[k].nodeName == "interact")
+							{
+								if (grandGrandChildren.length != 1)
+									return "Unable to parse transformation id=\"" + transformationId + "\" on the \"" + grandChildren[j].nodeName + "\" node: Interact transformations must be alone in the <transformations> tag!";
+
+								interactScaleFactor = this.reader.getFloat(grandGrandChildren[k], 'scale');
 							}
 							else
 							{
@@ -1384,6 +1395,13 @@ var COMPONENTS_INDEX = 9;
 
 			this.components[componentId] = new Component(this.scene, componentsTemp[componentId][0], componentsTemp[componentId][1], componentsTemp[componentId][2], componentsTemp[componentId][3], componentsTemp[componentId][4][0], componentsTemp[componentId][4][1], componentId);
 
+			if (interactScaleFactor != null)
+			{
+				this.components[componentId].interactScaleFactor = interactScaleFactor;
+				this.components[componentId].interactScale = 1;
+				this.components[componentId].generateInteractScaleMatrix();
+			}
+
 			numComponents++;
 		}
 
@@ -1471,7 +1489,7 @@ var COMPONENTS_INDEX = 9;
 		{
 			componentX.material = new CGFappearance(this.scene);
 
-			// componentX.materialParameters = componentLast.materialParameters;
+			componentX.materialParameters = componentLast.materialParameters;
 
 			this.fixInheritanceTextures(componentX, componentLast);
 
@@ -1504,7 +1522,7 @@ var COMPONENTS_INDEX = 9;
 					console.log("Undefined component reference on component \"" + componentX.id + "\" to component \"" + componentX.componentsRef[i] + "\"");
 				}
 			}
-			else if (componentX.materialParameters == undefined && componentX.materials[componentX.idMaterial] != "inherit" && componentX.materials[componentX.idMaterial] != "inherit")
+			else if (componentX.materialParameters == undefined && componentX.materials[componentX.idMaterial][0] != "inherit" && componentX.materials[componentX.idMaterial][0] != "inherit")
 			{
 				if (this.warned[1][componentX.componentsRef[i]] == undefined)
 				{

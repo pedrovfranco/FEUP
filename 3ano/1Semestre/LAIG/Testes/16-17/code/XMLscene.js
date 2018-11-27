@@ -134,6 +134,30 @@ class XMLscene extends CGFscene {
 			this.graph.initMaterials();
 		}
 
+		if (this.gui.isKeyPressed("KeyX"))
+		{
+			for (var id in this.graph.components)
+			{
+				this.graph.components[id].increaseInteractScale();
+			}
+		}
+
+		if (this.gui.isKeyPressed("KeyZ"))
+		{
+			for (var id in this.graph.components)
+			{
+				this.graph.components[id].decreaseInteractScale();
+			}
+		}
+
+		if (this.gui.isKeyPressed("KeyC"))
+		{
+			for (var id in this.graph.components)
+			{
+				this.graph.components[id].resetInteractScale();
+			}
+		}
+
 		if (keysPressed)
 			console.log(text);
 	};
@@ -177,7 +201,7 @@ class XMLscene extends CGFscene {
 		if (this.sceneInited)
 		{
 			this.graph.components[this.graph.idRoot].update(currTime);
-		}   
+		}
 	}
 
 	/**

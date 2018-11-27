@@ -46,9 +46,6 @@ class Component extends CGFobject
 		let resetFlag = false;
 		for (var i = 0; i < this.animations.length; i++)
 		{
-			if (i == 1)
-				var a = 0;
-
 			resetFlag = true;
 			if (!this.animations[i].finished)
 			{
@@ -84,6 +81,47 @@ class Component extends CGFobject
 		this.scene.popMatrix();
 
 		this.scene.materialDefault.apply();
+	}
+
+	generateInteractScaleMatrix()
+	{
+		if (this.interactScaleFactor != undefined)
+		{
+			this.transformationMatrix = mat4.create();
+
+			mat4.scale(this.transformationMatrix, this.transformationMatrix, vec3.fromValues(this.interactScale, this.interactScale, this.interactScale));
+		}
+	}
+
+	increaseInteractScale()
+	{
+		if (this.interactScaleFactor != undefined)
+		{
+			this.interactScale = this.interactScaleFactor;
+
+			this.generateInteractScaleMatrix();
+		}
+	}
+
+	decreaseInteractScale()
+	{
+		if (this.interactScaleFactor != undefined)
+		{
+
+			this.interactScale = 1/this.interactScaleFactor;
+
+			this.generateInteractScaleMatrix();
+		}
+	}
+
+	resetInteractScale()
+	{
+		if (this.interactScaleFactor != undefined)
+		{
+			this.interactScale = 1;
+
+			this.generateInteractScaleMatrix();
+		}
 	}
 
 	update(currTime)
