@@ -1,0 +1,319 @@
+<yas>
+
+	<scene root="root" axis_length="8" />
+
+	<views default="camera" >
+
+		<perspective id="camera" near="0.1" far="500" angle="20">
+			<from x="50" y="50" z="50" />
+			<to x="0" y="0" z="0" />
+		</perspective>
+
+ 		<ortho id="ortho" near="0.1" far="500" left="-15" right="15" top="15" bottom="-15">
+			<from x="25" y="25" z="25" />
+			<to x="0" y="0" z="0" />
+		</ortho>
+
+	</views>
+
+	<ambient>
+
+		<ambient r="1" g="1" b="1" a="1" />
+		<background r="0" g="0" b="0" a="1" />
+
+	</ambient>
+
+	<lights>
+
+		<omni id="omni1" enabled="1" >
+			<location x="2" y="20" z="2" w="1" />
+			<ambient r="0" g="0" b="0" a="1" />
+			<diffuse r="1" g="1" b="1" a="1" />
+			<specular r="0" g="0" b="0" a="1" />
+		</omni>
+
+		<omni id="omni2" enabled="1" >
+			<location x="0" y="20" z="2" w="1" />
+			<ambient r="0" g="0" b="0" a="1" />
+			<diffuse r="1" g="1" b="1" a="1" />
+			<specular r="0" g="0" b="0" a="1" />
+		</omni>
+
+		<omni id="omni3" enabled="1" >
+			<location x="-6" y="20" z="0" w="1" />
+			<ambient r="0" g="0" b="0" a="1" />
+			<diffuse r="1" g="1" b="1" a="1" />
+			<specular r="0" g="0" b="0" a="1" />
+		</omni>
+
+		<omni id="omni4" enabled="1" >
+			<location x="-2" y="20" z="-2" w="1" />
+			<ambient r="0" g="0" b="0" a="1" />
+			<diffuse r="1" g="1" b="1" a="1" />
+			<specular r="0" g="0" b="0" a="1" />
+		</omni>
+
+		<omni id="omni5" enabled="1" >
+			<location x="5" y="20" z="5" w="1" />
+			<ambient r="0" g="0" b="0" a="1" />
+			<diffuse r="1" g="1" b="1" a="1" />
+			<specular r="0" g="0" b="0" a="1" />
+		</omni>
+
+		<omni id="omni6" enabled="1" >
+			<location x="1" y="20" z="-6" w="1" />
+			<ambient r="0" g="0" b="0" a="1" />
+			<diffuse r="1" g="1" b="1" a="1" />
+			<specular r="0" g="0" b="0" a="1" />
+		</omni>
+
+		<omni id="omni7" enabled="1" >
+			<location x="-6" y="20" z="-13" w="1" />
+			<ambient r="0" g="0" b="0" a="1" />
+			<diffuse r="1" g="1" b="1" a="1" />
+			<specular r="0" g="0" b="0" a="1" />
+		</omni>
+
+		<spot id="spot1" enabled="1" angle="50" exponent="1">
+			<location x="0" y="2" z="-4" w="1" />
+			<target x="0" y="0" z="-4" />
+			<ambient r="0" g="0" b="0" a="1" />
+			<diffuse r="1" g="1" b="1" a="1" />
+			<specular r="0" g="0" b="0" a="1" />
+		</spot>
+
+	</lights>
+
+	<textures>
+
+		<texture id="texture1" file="scenes/images/nyan.jpg" />
+		<texture id="texture2" file="scenes/images/ball.jpg" />
+		<texture id="texture3" file="scenes/images/bamboo.jpg" />
+		<texture id="texture4" file="scenes/images/bridge.jpg" />
+		<texture id="texture5" file="scenes/images/float.jpg" />
+		<texture id="texture6" file="scenes/images/water.jpg" />
+		<texture id="texture7" file="scenes/images/wood.jpg" />
+		<texture id="grassTexture" file="scenes/images/grass.jpeg"/>
+		<texture id="sandTexture" file="scenes/images/sand.jpg"/>
+		<texture id="lhTexture" file="scenes/images/lh.jpg"/>
+		<texture id="glassTexture" file="scenes/images/glass.jpeg"/>
+		<texture id="lightHouseTexture" file="scenes/images/lighthouse.png"/>
+		<texture id="lightHouseWindowTexture" file="scenes/images/lighthousewindow2.png"/>
+		<texture id="lighthouseRed" file="scenes/images/lighthousered.png"/>
+		<texture id="lighthouseDoor" file="scenes/images/lighthousedoor.png"/>
+		<texture id="city" file="scenes/images/city.jpg"/>
+		<texture id="sandHeightmap" file="scenes/images/sandHeightmap.jpg"/>
+		<texture id="waterHeightmap" file="scenes/images/waterHeightmap3.jpg"/>
+		<texture id="helicopter" file="scenes/images/h.png"/>
+		<texture id="islandHeightmap" file="scenes/images/islandHeightmap.jpg"/>
+
+	</textures>
+
+	<materials>
+
+		<material id="material1" shininess="120" >
+			<emission r="0" g="0" b="0" a="0" />
+			<ambient r="1" g="1" b="1" a="1" />
+			<diffuse r="1" g="1" b="1" a="1" />
+			<specular r="0" g="0" b="0" a="0" />
+		</material>
+
+		<material id="material2" shininess="10" >
+			<emission r="0" g="0" b="0" a="0" />
+			<ambient r="0" g="0" b="0" a="0" />
+			<diffuse r="1" g="1" b="1" a="1" />
+			<specular r="0" g="0" b="0" a="0" />
+
+		</material>
+
+		<material id="material3" shininess="0" >
+			<emission r="0" g="0" b="0" a="0" />
+			<ambient r="1" g="1" b="1" a="1" />
+			<diffuse r="1" g="1" b="1" a="1" />
+			<specular r="0" g="0" b="0" a="0" />
+
+		</material>
+
+	</materials>
+
+	<transformations>
+
+		<transformation id="transformation1">
+			<translate x="0" y="0" z="0" />
+			<rotate axis="x" angle="0" />
+			<scale x="1" y="1" z="1" />
+		</transformation>
+
+	</transformations>
+
+
+	<animations>
+		<linear id="linear1" span="10" >
+			<controlpoint xx="0" yy="0" zz="0" />
+			<controlpoint xx="5" yy="0" zz="5" />
+			<controlpoint xx="5" yy="0" zz="0" />
+		</linear>
+
+		<circular id="circular" span="1" center="0 0 0" radius="5" startang="40" rotang="20" />
+
+		<linear id="drone1" span="3" >
+			<controlpoint xx="0" yy="0" zz="0" />
+			<controlpoint xx="0" yy="10" zz="0" />
+		</linear>
+
+		<circular id="drone2" span="3" center="0 10 0" radius="0" startang="-90" rotang="-141.55" />
+
+		<linear id="drone3" span="6" >
+			<controlpoint xx="0" yy="10" zz="0" />
+			<controlpoint xx="-13.1" yy="10" zz="-16.85" />
+		</linear>
+
+		<circular id="drone4" span="5" center="-17.7 10 -13" radius="6" startang="130" rotang="205" />
+
+		<linear id="drone5" span="6" >
+			<controlpoint xx="-20.25" yy="10" zz="-7.57" />
+			<controlpoint xx="0" yy="10" zz="0" />
+		</linear>
+
+		<circular id="drone6" span="3" center="0 10 0" radius="0" startang="-20.5" rotang="-69.5" />
+
+		<linear id="drone7" span="6" >
+			<controlpoint xx="0" yy="10" zz="0" />
+			<controlpoint xx="0" yy="0" zz="0" />
+		</linear>
+				
+		<linear id="drone8" span="5" >
+			<controlpoint xx="0" yy="0" zz="0" />
+			<controlpoint xx="0" yy="0" zz="0" />
+		</linear>
+
+	</animations>
+
+
+	<primitives>
+
+		<primitive id="triangle">
+			<triangle x1="0" y1="0" z1="0" x2="1" y2="0" z2="0" x3="0" y3="1" z3="0" />
+		</primitive>
+
+		<primitive id="torus">
+			<torus inner="1" outer="4" slices="100" loops="100" />
+		</primitive>
+
+		<primitive id="cylinder">
+			<cylinder base="1" top="1" height="1" slices="30" stacks="30" />
+		</primitive>
+
+		<primitive id="lightHouseWindow">
+			<cylinder base="1" top="1" height="1" slices="30" stacks="30" />
+		</primitive>
+
+		<primitive id="rectangle">
+			<rectangle x1="0" y1="0" x2="2" y2="2"/>
+		</primitive>
+
+		<primitive id="rectangle1x1">
+			<rectangle x1="0" y1="0" x2="1" y2="1"/>
+		</primitive>
+
+		<primitive id="sphere">
+			<sphere radius="1" slices="65" stacks="60" />
+		</primitive>
+
+		<primitive id="torusCatwalk">
+			<torus inner="0.03" outer="4" slices="100" loops="100" />
+		</primitive>
+
+		<primitive id="water">
+			<water idtexture="texture6" idwavemap="waterHeightmap" parts="200" heightscale="4" texscale="0.25"/>
+		</primitive>
+
+		<primitive id="terrain">
+			<terrain idtexture="sandTexture" idheightmap="sandHeightmap" parts="10" heightscale="1"/>
+		</primitive>
+
+		<primitive id="sand">
+			<terrain idtexture="sandTexture" idheightmap="islandHeightmap" parts="50" heightscale="7"/>
+		</primitive>
+
+		<!-- Nova primitiva: plano, gerado por NURBS -->
+		<primitive id="plane">
+			<plane npartsU="5" npartsV="8" />
+		</primitive>
+		<!-- ex: <plane npartsU=“5” npartsU=“8” /-->
+		<!-- um plano de dimensões 1 x 1 unidades assente-->
+		<!-- em XZ, centrado na origem -->
+		<!-- e com a face visível apontando para +Y -->
+		<!-- com divisão em cinco partes por oito partes -->
+		<!-- Nova primitiva: patch, gerada por NURBS -->
+		<!-- — parâmetros: -->
+		<!-- — npartsU: divisão em partes no domínio U a -->
+		<!-- ser usada para o cálculo da superfície -->
+		<!-- — npartsV: divisão em partes no domínio V -->
+		<!-- a ser usada para o cálculo da superficie -->
+		<!-- - o número de pontos de controlo dentro da -->
+		<!-- primitiva patch é npointsU * npointsV -->
+		<primitive id="patch2"> 
+			<patch npointsU="2" npointsV="2" npartsU="2" npartsV="2" > 
+				<controlpoint xx="1" yy="0" zz="0" />
+				<controlpoint xx="0" yy="0" zz="0" />
+				<controlpoint xx="1" yy="0" zz="1" />
+				<controlpoint xx="0" yy="0" zz="1" />
+			</patch>
+		</primitive>
+
+			<primitive id="patch"> 
+			<patch npointsU="3" npointsV="2" npartsU="5" npartsV="5" > 
+				<controlpoint xx="-1.5" yy="-1.5" zz="0" />
+				<controlpoint xx="-1.5" yy="1.5" zz="0" />
+				<controlpoint xx="0" yy="-1.5" zz="1.1" />
+				<controlpoint xx="0" yy="1.5" zz="1.1" />
+				<controlpoint xx="1.5" yy="-1.5" zz="0" />
+				<controlpoint xx="1.5" yy="1.5" zz="0" />
+			</patch>
+		</primitive>
+
+		<primitive id="cylinder2">
+			<cylinder2 base="1" top="1" height="1" slices="30" stacks="30" />
+		</primitive>
+		 <!-- Nova primitiva vehicle: corresponde a um veículo voador.
+		Inclui pelo menos uma superfície não plana gerada
+		utilizando NURBS e em código javascript -->
+		<!-- <vehicle /> -->
+		<!-- — Nova primitiva: cilindro baseado em NURBS -->
+		<!-- parâmetros iguais ao cilindro original -->
+		<!-- <cylinder2 base="ff" top="ff" height="ff" slices="ii"
+		stacks="ii" /> -->
+		<primitive id="vehicle">
+			<vehicle/>
+		</primitive>
+
+	</primitives>
+
+	<components>
+		<component id="root">
+			<transformation>
+			</transformation>
+			<materials>
+				<material id="material1" />
+			</materials>
+			<texture id="none" length_s="1" length_t="1" />
+			<children>
+				<componentref id="1" />
+			</children>
+		</component>
+
+		<component id="1">
+			<transformation>
+			</transformation>
+			<materials>
+				<material id="material1" />
+			</materials>
+			<texture id="texture1" length_s="1" length_t="1" />
+			<children>
+				<primitiveref id="cylinder2" />
+			</children>
+		</component>
+		
+	</components>
+</yas>
