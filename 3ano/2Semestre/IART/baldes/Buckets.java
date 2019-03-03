@@ -1,6 +1,9 @@
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.Iterator;
 
 import node.Node;
 import operation.Operation;
@@ -41,6 +44,41 @@ public class Buckets
 		}
 		
 		return breadth(nextRow, objective, operations, operationNames, level+1);
+	}
+	
+	public static Node breadth2(HashSet<Node> tree, ArrayList<Node> currRow, int[] objective, Operation[] operations, String[] operationNames, int level)
+	{
+		Node currNode = new Node();
+		Node nextNode = new Node();
+		int[] operationHolder = new int[3];
+				
+		ArrayList<Node> nextRow = new ArrayList<Node>(); 
+
+		for (int i = 0; i < currRow.size(); i++)
+		{
+			currNode = currRow.get(i);
+			
+			for (int j = 0; j < operations.length; j++)
+			{
+				operationHolder = operations[j].operation(currNode.state);
+				nextNode = new Node(operationHolder[0], operationHolder[1], currNode.cost+operationHolder[2]);
+				nextNode.parent = currNode;
+				nextNode.operationName = operationNames[j];
+				
+				if (Arrays.equals(nextNode.state, objective))
+				{
+					return nextNode;
+				}
+				
+				if (tree.add(nextNode))
+				{
+					nextRow.add(nextNode);
+				}
+			}
+		}
+		
+		
+		return breadth2(tree, nextRow, objective, operations, operationNames, level+1);
 	}
 	
 	
@@ -120,12 +158,22 @@ public class Buckets
 
 		ArrayList<Node> root = new ArrayList<Node>();
 		root.add(new Node(0,0,0));
+		
+		HashSet<Node> tree = new HashSet<Node>();
+		tree.add(new Node(0,0,0));
 
 		int[] objective = {2,0};
 
-//		Node result = breadth(root, objective, operations, operationNames, 0);
+		long start = System.nanoTime();
+		Node result = null;
+		for (int i = 0; i < 50; i++)
+		{
+			tree = new HashSet<Node>();
+			tree.add(new Node(0,0,0));
+			result = breadth2(tree, root, objective, operations, operationNames, 0);
+//			result = depth(new Node(0,0,0), objective, operations, operationNames, 0, 15);
+		}
 		
-		Node result = depth(new Node(0,0,0), objective, operations, operationNames, 0, 15);
 
 		
 		ArrayList<String> path = getPath(result, operations, operationNames);
@@ -134,6 +182,10 @@ public class Buckets
 		{
 			System.out.println(path.get(i));
 		}
-
+		
+		double deltaTime = (System.nanoTime()-start);
+		deltaTime /= 1000000;
+				
+		System.out.format("\nExecuted in %f seconds.", deltaTime);
 	}
 }
