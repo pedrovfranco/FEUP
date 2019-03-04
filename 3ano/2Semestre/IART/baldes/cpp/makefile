@@ -1,0 +1,15 @@
+CXX		 = g++
+CXXFLAGS = -std=c++11 -O3
+LDFLAGS  =
+DEPS	 = main.cpp node.cpp makefile
+OBJFILES = main.o node.o
+TARGET	 = main.exe
+
+all: $(TARGET)
+
+$(TARGET): $(OBJFILES) $(DEPS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJFILES) $(LDFLAGS)
+
+
+clean:
+	rm -f $(OBJFILES) $(TARGET) *~
