@@ -37,35 +37,41 @@ Node* breadth(vector<Node*> currRow, vector<int> objective, vector<function<vect
 	vector<Node*> nextRow;
 
 	// printSet(tree);
-
-	for (int i = 0; i < currRow.size(); i++)
+	while (1)
 	{
-		currNode = currRow[i];
-
-		for (int j = 0; j < operations.size(); j++)
+		for (int i = 0; i < currRow.size(); i++)
 		{
-			operationHolder = operations[j](currNode->state);
-			nextNode = new Node(operationHolder[0], operationHolder[1], currNode->cost+operationHolder[2]);
-			nextNode->parent = currNode;
-			nextNode->operationName = operationNames[j];
+			currNode = currRow[i];
 
-			if (nextNode->state == objective)
+			for (int j = 0; j < operations.size(); j++)
 			{
-				return nextNode;
-			}
+				operationHolder = operations[j](currNode->state);
+				nextNode = new Node(operationHolder[0], operationHolder[1], currNode->cost+operationHolder[2]);
+				nextNode->parent = currNode;
+				nextNode->operationName = operationNames[j];
 
-			if (nextNode->parent == NULL || nextNode->state != nextNode->parent->state) // Checks if the state is the same after the operation
-			{
-				if (nextNode->parent->parent == NULL || nextNode->state != nextNode->parent->parent->state) // Checks if the state doesn't change from 2 levels above
+				if (nextNode->state == objective)
 				{
-					nextRow.push_back(nextNode);
+					return nextNode;
+				}
+
+				if (nextNode->parent == NULL || nextNode->state != nextNode->parent->state) // Checks if the state is the same after the operation
+				{
+					if (nextNode->parent->parent == NULL || nextNode->state != nextNode->parent->parent->state) // Checks if the state doesn't change from 2 levels above
+					{
+						nextRow.push_back(nextNode);
+					}
 				}
 			}
 		}
+
+		currRow = nextRow;
+		nextRow.resize(0);
 	}
+	
 
 
-	return breadth(nextRow, objective, operations, operationNames, level+1);
+	return NULL;
 }
 
 Node* breadth2(unordered_set<Node*, hashNode, hashNode> tree, vector<Node*> currRow, vector<int> objective, vector<function<vector<int>(vector<int>)>> operations, string operationNames[], int level)
@@ -205,8 +211,8 @@ int main()
 
 	for (int i = 0; i < 5000; i++)
 	{
-		// result = breadth(rootRow, objective, operations, operationNames, 0);
-		result = breadth2(tree, rootRow, objective, operations, operationNames, 0);
+		result = breadth(rootRow, objective, operations, operationNames, 0);
+		// result = breadth2(tree, rootRow, objective, operations, operationNames, 0);
 		// result = depth(rootNode, objective, operations, operationNames, 0, 12);
 	}
 	
