@@ -78,7 +78,7 @@ void ui_utilities::ClearScreen()
 		return TRUE;
 	}
 
-	void ui_utilities::Sleep(int milliseconds)
+	void ui_utilities::milliSleep(int milliseconds)
 	{
 		Sleep(milliseconds);
 	}
@@ -107,7 +107,7 @@ void ui_utilities::ClearScreen()
 		return true;
 	}
 
-	void ui_utilities::Sleep(int milliseconds)
+	void ui_utilities::milliSleep(int milliseconds)
 	{
 		usleep(milliseconds*1000);
 	}

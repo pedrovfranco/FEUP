@@ -7,6 +7,7 @@
 #include <functional>
 #include <time.h> 
 #include <algorithm>
+#include <windows.h>
 
 #include "node.h"
 #include "mapLoader.h"
@@ -471,7 +472,7 @@ void printPath2(Node* node, vector<vector<int>> map)
 		printMap(map, states[i]);
 		cout << "\n\n";
 
-		ui_utilities::Sleep(2000); //sleeps for 1 second
+		ui_utilities::milliSleep(2000); //sleeps for 1 second
 	}
 }
 
@@ -511,14 +512,14 @@ void printPath3(Node* node, vector<vector<int>> map)
 		ui_utilities::ClearScreen();
 		printMap(map, currNode);
 		cout << "\n\n";
-		ui_utilities::Sleep(flashTime); //sleeps for 500 milliseconds
+		ui_utilities::milliSleep(flashTime); //sleeps for 100 milliseconds
 	}
 	currNode->state = stateSave;
 
 	ui_utilities::ClearScreen();
 	printMap(map, currNode);
 	cout << "\n\n";
-	ui_utilities::Sleep(stopTime*2); //sleeps for 500 milliseconds
+	ui_utilities::milliSleep(stopTime*2); //sleeps for 1 second
 
 
 	for (int i = path.size()-1; i >= 1; i--) // walking animation
@@ -536,7 +537,7 @@ void printPath3(Node* node, vector<vector<int>> map)
 				ui_utilities::ClearScreen();
 				printMap(map, currNode);
 				cout << "\n\n";
-				ui_utilities::Sleep(walkTime); //sleeps for 500 milliseconds
+				ui_utilities::milliSleep(walkTime); //sleeps for 200 milliseconds
 
 			}
 		}
@@ -550,13 +551,13 @@ void printPath3(Node* node, vector<vector<int>> map)
 				ui_utilities::ClearScreen();
 				printMap(map, currNode);
 				cout << "\n\n";
-				ui_utilities::Sleep(walkTime); //sleeps for 500 milliseconds
+				ui_utilities::milliSleep(walkTime); //sleeps for 200 milliseconds
 
 			}
 		}
 
 		if (i >= 2)
-			ui_utilities::Sleep(stopTime); //sleeps for 500 milliseconds
+			ui_utilities::milliSleep(stopTime); //sleeps for 500 milliseconds
 	}
 
 
@@ -576,7 +577,7 @@ void printPath3(Node* node, vector<vector<int>> map)
 		ui_utilities::ClearScreen();
 		printMap(map, currNode);
 		cout << "\n\n";
-		ui_utilities::Sleep(flashTime); //sleeps for 500 milliseconds
+		ui_utilities::milliSleep(flashTime); //sleeps for 500 milliseconds
 	}
 }
 
@@ -594,7 +595,7 @@ int main()
 	vector<int> start;
 	vector<int> objective;
 
-	vector<vector<int>> map = loadMap("map3.txt", start, objective);
+	vector<vector<int>> map = loadMap("map2.txt", start, objective);
 	
 	Node* rootNode = new Node();
 	rootNode->state = start;

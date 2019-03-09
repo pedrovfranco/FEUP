@@ -33,9 +33,8 @@ public:
 	 */
 	static bool SetWindow(const int& width, const int& height);
 
-	static void Sleep(int milliseconds);
+	static void milliSleep(int milliseconds);
 
 };
-
 
 #endif
