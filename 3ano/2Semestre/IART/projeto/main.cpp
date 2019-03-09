@@ -7,7 +7,6 @@
 #include <functional>
 #include <time.h> 
 #include <algorithm>
-#include <unistd.h>
 
 #include "node.h"
 #include "mapLoader.h"
@@ -472,7 +471,7 @@ void printPath2(Node* node, vector<vector<int>> map)
 		printMap(map, states[i]);
 		cout << "\n\n";
 
-		usleep(2000*1000); //sleeps for 1 second
+		ui_utilities::Sleep(2000); //sleeps for 1 second
 	}
 }
 
@@ -512,14 +511,14 @@ void printPath3(Node* node, vector<vector<int>> map)
 		ui_utilities::ClearScreen();
 		printMap(map, currNode);
 		cout << "\n\n";
-		usleep(flashTime*1000); //sleeps for 500 milliseconds
+		ui_utilities::Sleep(flashTime); //sleeps for 500 milliseconds
 	}
 	currNode->state = stateSave;
 
 	ui_utilities::ClearScreen();
 	printMap(map, currNode);
 	cout << "\n\n";
-	usleep(stopTime*2*1000); //sleeps for 500 milliseconds
+	ui_utilities::Sleep(stopTime*2); //sleeps for 500 milliseconds
 
 
 	for (int i = path.size()-1; i >= 1; i--) // walking animation
@@ -537,7 +536,7 @@ void printPath3(Node* node, vector<vector<int>> map)
 				ui_utilities::ClearScreen();
 				printMap(map, currNode);
 				cout << "\n\n";
-				usleep(walkTime*1000); //sleeps for 500 milliseconds
+				ui_utilities::Sleep(walkTime); //sleeps for 500 milliseconds
 
 			}
 		}
@@ -551,13 +550,13 @@ void printPath3(Node* node, vector<vector<int>> map)
 				ui_utilities::ClearScreen();
 				printMap(map, currNode);
 				cout << "\n\n";
-				usleep(walkTime*1000); //sleeps for 500 milliseconds
+				ui_utilities::Sleep(walkTime); //sleeps for 500 milliseconds
 
 			}
 		}
 
 		if (i >= 2)
-			usleep(stopTime*1000); //sleeps for 500 milliseconds
+			ui_utilities::Sleep(stopTime); //sleeps for 500 milliseconds
 	}
 
 
@@ -577,7 +576,7 @@ void printPath3(Node* node, vector<vector<int>> map)
 		ui_utilities::ClearScreen();
 		printMap(map, currNode);
 		cout << "\n\n";
-		usleep(flashTime*1000); //sleeps for 500 milliseconds
+		ui_utilities::Sleep(flashTime); //sleeps for 500 milliseconds
 	}
 }
 

@@ -78,7 +78,14 @@ void ui_utilities::ClearScreen()
 		return TRUE;
 	}
 
+	void ui_utilities::Sleep(int milliseconds)
+	{
+		Sleep(milliseconds);
+	}
+
 #else
+
+	#include <unistd.h>
 
 	void ui_utilities::ClearScreen()
 	{
@@ -98,6 +105,11 @@ void ui_utilities::ClearScreen()
 		cout << res;
 
 		return true;
+	}
+
+	void ui_utilities::Sleep(int milliseconds)
+	{
+		usleep(milliseconds*1000);
 	}
 
 

@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+#include <thread>
+#include <chrono>
 
 using namespace std;
 
@@ -30,6 +32,8 @@ public:
 	 * @return     True if sucessful and False otherwise
 	 */
 	static bool SetWindow(const int& width, const int& height);
+
+	static void Sleep(int milliseconds);
 
 };
 
