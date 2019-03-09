@@ -37,10 +37,10 @@ Node::Node(int n)
 	
 	if (n == 4)
 	{
-		this->state[0] = {9,2,8,11};
-		this->state[1] = {0,5,13,7};
-		this->state[2] = {15,1,4,10};
-		this->state[3] = {3,14,6,12};
+		this->state[0] = {2,3,7,4};
+		this->state[1] = {0,6,5,8};
+		this->state[2] = {1,10,15,11};
+		this->state[3] = {9,13,14,12};
 
 		this->x = 0;
 		this->y = 1;
@@ -74,32 +74,48 @@ Node::Node(const Node& node)
 
 void Node::setH(vector<vector<int>> objective)
 {
-	this->h = (this->state.size()*this->state.size());
+	// this->h = (this->state.size()*this->state.size());
+
+	this->h = 0;
 
 	for (int i = 0; i < this->state.size(); ++i)
 	{
 		for (int j = 0; j < this->state[i].size(); ++j)
 		{
-			if (this->state[i][j] == objective[i][j])
-				this->h--;
+			// if (this->state[i][j] == objective[i][j])
+			// {
+			// 	this->h--;
+			// }
+
+			int x,y;
+			if (this->state[i][j] == 0)
+			{
+				x = this->state.size()-1;
+				y = this->state.size()-1;
+			}
+			else
+			{
+				x = (this->state[i][j]-1)%3;
+				y = (this->state[i][j]-1)/3;
+			}
+			
+			this->h += abs(x-j) + abs(y-i);
 		}
 	}
-
-	this->h *= 10;
 
 	this->f = this->cost + this->h;
 }
 
 
-// bool Node::operator==(const Node* node) const
-// {
-// 	return (this->state == node->state);
-// }
+bool Node::operator==(const Node* node) const
+{
+	return (this->state == node->state);
+}
 
-// bool Node::operator==(const Node& node) const
-// {
-// 	return (this->state == node.state);
-// }
+bool Node::operator==(const Node& node) const
+{
+	return (this->state == node.state);
+}
 
 // bool Node::operator>(const Node* node) const
 // {

@@ -7,10 +7,12 @@
 #include <functional>
 #include <time.h> 
 #include <algorithm>
+#include <unistd.h>
 
 #include "node.h"
+#include "mapLoader.h"
+#include "ui_utilities.h"
 
-#define N 4
 #define DEBUG 0
 
 using namespace std;
@@ -26,27 +28,8 @@ void printSet(unordered_set<Node*, hashNode, hashNode> tree)
 	cout << "\n";
 }
 
-vector<vector<int>> getObjective()
-{
-	vector<int> foobar(N, 0);
-	vector<vector<int>> state(N, foobar);
-	int counter = 1;
-	
-	for (int i = 0; i < N; i++)
-	{
-		for (int j = 0; j < N; j++)
-		{
-			state[i][j] = counter;
-			counter++;
-		}
-	}
 
-	state[state.size()-1][state[0].size()-1] = 0;
-
-	return state;
-}
-
-Node* breadth(vector<Node*> currRow, vector<vector<int>> objective, vector<function<Node*(Node*)>> operations, string operationNames[], int level)
+Node* breadth(vector<Node*> currRow, vector<int> objective, vector<vector<int>> map, vector<function<Node*(Node*, vector<vector<int>>)>> operations, string operationNames[], int level)
 {
 	if (currRow.size() == 0)
 	{
@@ -67,7 +50,7 @@ Node* breadth(vector<Node*> currRow, vector<vector<int>> objective, vector<funct
 
 			for (int j = 0; j < operations.size(); j++)
 			{
-				nextNode = operations[j](currNode);
+				nextNode = operations[j](currNode, map);
 				nextNode->cost++;
 				nextNode->parent = currNode;
 				nextNode->operationName = operationNames[j];
@@ -98,15 +81,15 @@ Node* breadth(vector<Node*> currRow, vector<vector<int>> objective, vector<funct
 }
 
 
-Node* breadth2(unordered_set<Node*, hashNode, hashNode> tree, vector<Node*> currRow, vector<vector<int>> objective, vector<function<Node*(Node*)>> operations, string operationNames[], int level)
+Node* breadth2(unordered_set<Node*, hashNode, hashNode> tree, vector<Node*> currRow, vector<int> objective, vector<vector<int>> map, vector<function<Node*(Node*, vector<vector<int>>)>> operations, string operationNames[], int level)
 {
 	if (currRow.size() == 0)
 	{
-		cout << "Tree size = " << tree.size() << "\n";
+		if (DEBUG)
+			cout << "Tree size = " << tree.size() << "\n";
+
 		return NULL;
 	}
-
-	// cout << "Level  = " << level << ", Tree size = " << tree.size() << "\n";
 
 	Node* currNode;
 	Node* nextNode;
@@ -123,17 +106,16 @@ Node* breadth2(unordered_set<Node*, hashNode, hashNode> tree, vector<Node*> curr
 
 		for (int j = 0; j < operations.size(); j++)
 		{
-			nextNode = operations[j](currNode);
+			nextNode = operations[j](currNode, map);
 			nextNode->cost++;
 			nextNode->parent = currNode;
 			nextNode->operationName = operationNames[j];
 
-			if (DEBUG)
-				cout << *nextNode << "\n";
-
-
 			if (nextNode->state == objective)
 			{
+				if (DEBUG)
+					cout << "Tree size = " << tree.size() << "\n";
+
 				return nextNode;
 			}
 
@@ -149,7 +131,7 @@ Node* breadth2(unordered_set<Node*, hashNode, hashNode> tree, vector<Node*> curr
 	}
 
 
-	return breadth2(tree, nextRow, objective, operations, operationNames, level+1);
+	return breadth2(tree, nextRow, objective, map, operations, operationNames, level+1);
 }
 
 /*
@@ -202,7 +184,7 @@ Node* depth(Node* currNode, vector<int> objective, vector<function<vector<int>(v
 
 
 
-Node* greedy(unordered_set<Node*, hashNode, hashNode>& tree, Node* currNode, vector<vector<int>> objective, vector<function<Node*(Node*)>> operations, string operationNames[], int level)
+Node* greedy(unordered_set<Node*, hashNode, hashNode>& tree, Node* currNode, vector<int> objective, vector<vector<int>> map, vector<function<Node*(Node*, vector<vector<int>>)>> operations, string operationNames[], int level)
 {
 	if (currNode == NULL/* || level == 10*/)
 	{
@@ -221,7 +203,7 @@ Node* greedy(unordered_set<Node*, hashNode, hashNode>& tree, Node* currNode, vec
 
 	for (int i = 0; i < operations.size(); i++)
 	{
-		nextNode = operations[i](currNode);
+		nextNode = operations[i](currNode, map);
 		nextNode->cost++;
 		nextNode->parent = currNode;
 		nextNode->operationName = operationNames[i];
@@ -248,7 +230,7 @@ Node* greedy(unordered_set<Node*, hashNode, hashNode>& tree, Node* currNode, vec
 		// 	cout << *nextNode << "\n\n";
 		// }
 
-		Node* nextCall = greedy(tree, nextNode, objective, operations, operationNames, level+1);
+		Node* nextCall = greedy(tree, nextNode, objective, map, operations, operationNames, level+1);
 
 		if (nextCall != NULL)
 			return nextCall;
@@ -273,13 +255,11 @@ multiset<Node*, sortH>::iterator linearSearchSet(multiset<Node*, sortH> input, N
 }
 
 
-Node* aStar(vector<vector<int>> objective, vector<function<Node*(Node*)>> operations, string operationNames[], int level)
+Node* aStar(Node* currNode, vector<int> objective, vector<vector<int>> map, vector<function<Node*(Node*, vector<vector<int>>)>> operations, string operationNames[], int level)
 {
 	multiset<Node*, sortH> openList;
 	multiset<Node*, sortH> closedList;
 	
-	Node* currNode = new Node(N);
-	currNode->setH(objective);
 	openList.insert(currNode);
 
 	Node* nextNode;
@@ -302,7 +282,7 @@ Node* aStar(vector<vector<int>> objective, vector<function<Node*(Node*)>> operat
 
 		for (int i = 0; i < operations.size(); i++)
 		{
-			nextNode = operations[i](currNode);
+			nextNode = operations[i](currNode, map);
 			nextNode->cost++;
 			nextNode->parent = currNode;
 			nextNode->operationName = operationNames[i];
@@ -341,16 +321,13 @@ Node* aStar(vector<vector<int>> objective, vector<function<Node*(Node*)>> operat
 	return NULL;
 }
 
-Node* aStar2(vector<vector<int>> objective, vector<function<Node*(Node*)>> operations, string operationNames[], int level)
+Node* aStar2(Node* currNode, vector<int> objective, vector<vector<int>> map, vector<function<Node*(Node*, vector<vector<int>>)>> operations, string operationNames[], int level)
 {
 	multiset<Node*, sortH> openList;
 	unordered_set<Node*, hashNode, hashNode> openSet;
 
 	multiset<Node*, sortH> closedList;
 	unordered_set<Node*, hashNode, hashNode> closedSet;
-
-	Node* currNode = new Node(N);
-	currNode->setH(objective);
 
 	openList.insert(currNode);
 	openSet.insert(currNode);
@@ -377,7 +354,7 @@ Node* aStar2(vector<vector<int>> objective, vector<function<Node*(Node*)>> opera
 
 		for (int i = 0; i < operations.size(); i++)
 		{
-			nextNode = operations[i](currNode);
+			nextNode = operations[i](currNode, map);
 			nextNode->cost++;
 			nextNode->parent = currNode;
 			nextNode->operationName = operationNames[i];
@@ -421,8 +398,11 @@ Node* aStar2(vector<vector<int>> objective, vector<function<Node*(Node*)>> opera
 
 void printPath(Node* node)
 {
+	if (node == NULL)
+		return;
+
 	vector<string> path;
-	vector<vector<vector<int>>> states;
+	vector<vector<int>> states;
 
 	while (node->parent != NULL) // Until reaches root node
 	{
@@ -432,32 +412,193 @@ void printPath(Node* node)
 		node = node->parent;
 	}
 
+	cout << "Path:\n";
 	cout << printState(node->state);
 	cout << "\n\n";
 
 	for (int i = path.size()-1; i >= 0; i--)
 	{
 		cout << path[i] << "\n";
-		// cout << printState(states[i]);
-		// cout << "\n\n";
+		cout << printState(states[i]);
+		cout << "\n\n";
 	}
 
+	cout << "Path size: " << path.size() << "\n";
+
+}
+
+
+void printMap(vector<vector<int>> map, Node* node)
+{
+	for (int i = 0; i < map.size(); ++i)
+	{
+		for (int j = 0; j < map[i].size(); ++j)
+		{
+			if (node != NULL && i == node->state[1] && j == node->state[0]) // robot's position
+				cout << 2;
+
+			else if (map[i][j] == 2)
+				cout << 0;
+
+			else
+				cout << map[i][j];
+
+			cout << " ";
+		}
+
+		cout << "\n";
+	}
+}
+
+void printPath2(Node* node, vector<vector<int>> map)
+{
+	if (node == NULL)
+		return;
+
+	vector<string> path;
+	vector<Node*> states;
+
+	while (node != NULL) // Until reaches root node
+	{
+		path.push_back(node->operationName);
+		states.push_back(node);
+
+		node = node->parent;
+	}
+
+	for (int i = path.size()-1; i >= 0; i--)
+	{
+		ui_utilities::ClearScreen();
+		printMap(map, states[i]);
+		cout << "\n\n";
+
+		usleep(2000*1000); //sleeps for 1 second
+	}
+}
+
+
+void printPath3(Node* node, vector<vector<int>> map)
+{
+	if (node == NULL)
+		return;
+
+	vector<string> path;
+	vector<Node*> states;
+
+	while (node != NULL) // Until reaches root node
+	{
+		path.push_back(node->operationName);
+		states.push_back(node);
+
+		node = node->parent;
+	}
+
+	int flashTime = 100, walkTime = 200, stopTime = 500;
+	Node *currNode = new Node(*states.back()), *nextNode;
+	vector<int> stateSave = currNode->state;
+
+	for (int i = 0; i < 15; ++i) // start flashing animation
+	{
+		if (i % 2 == 0)
+		{
+			currNode->state[0] = -1;
+			currNode->state[1] = -1;
+		}
+		else
+		{
+			currNode->state = stateSave;
+		}
+
+		ui_utilities::ClearScreen();
+		printMap(map, currNode);
+		cout << "\n\n";
+		usleep(flashTime*1000); //sleeps for 500 milliseconds
+	}
+	currNode->state = stateSave;
+
+	ui_utilities::ClearScreen();
+	printMap(map, currNode);
+	cout << "\n\n";
+	usleep(stopTime*2*1000); //sleeps for 500 milliseconds
+
+
+	for (int i = path.size()-1; i >= 1; i--) // walking animation
+	{
+		currNode = new Node(*states[i]);
+		nextNode = states[i-1];
+
+		if (currNode->state[0] == nextNode->state[0])
+		{
+			int deltaY = nextNode->state[1] - currNode->state[1];
+
+			for (int j = 0; j < abs(deltaY); ++j)
+			{
+				currNode->state[1] += deltaY/abs(deltaY);
+				ui_utilities::ClearScreen();
+				printMap(map, currNode);
+				cout << "\n\n";
+				usleep(walkTime*1000); //sleeps for 500 milliseconds
+
+			}
+		}
+		else
+		{
+			int deltaX = nextNode->state[0] - currNode->state[0];
+
+			for (int j = 0; j < abs(deltaX); ++j)
+			{
+				currNode->state[0] += deltaX/abs(deltaX);
+				ui_utilities::ClearScreen();
+				printMap(map, currNode);
+				cout << "\n\n";
+				usleep(walkTime*1000); //sleeps for 500 milliseconds
+
+			}
+		}
+
+		if (i >= 2)
+			usleep(stopTime*1000); //sleeps for 500 milliseconds
+	}
+
+
+	stateSave = currNode->state;
+	for (int i = 0; i < 15; ++i) // end flashing animation
+	{
+		if (i % 2 == 0)
+		{
+			currNode->state[0] = -1;
+			currNode->state[1] = -1;
+		}
+		else
+		{
+			currNode->state = stateSave;
+		}
+
+		ui_utilities::ClearScreen();
+		printMap(map, currNode);
+		cout << "\n\n";
+		usleep(flashTime*1000); //sleeps for 500 milliseconds
+	}
 }
 
 
 int main()
 {
-	function<Node*(Node*)> up = [](Node* node) { Node* newNode = new Node(*node); if(newNode->y > 0) { swap(newNode->state[newNode->y][newNode->x], newNode->state[newNode->y-1][newNode->x]); newNode->y--;} return newNode;};
-	function<Node*(Node*)> right = [](Node* node) { Node* newNode = new Node(*node); if(newNode->x < newNode->state[0].size()-1) { swap(newNode->state[newNode->y][newNode->x], newNode->state[newNode->y][newNode->x+1]); newNode->x++;} return newNode;};
-	function<Node*(Node*)> down = [](Node* node) { Node* newNode = new Node(*node); if(newNode->y < newNode->state.size()-1) { swap(newNode->state[newNode->y][newNode->x], newNode->state[newNode->y+1][newNode->x]); newNode->y++;} return newNode;};
-	function<Node*(Node*)> left = [](Node* node) { Node* newNode = new Node(*node); if(newNode->x > 0) { swap(newNode->state[newNode->y][newNode->x], newNode->state[newNode->y][newNode->x-1]); newNode->x--;} return newNode;};
+	function<Node*(Node*, vector<vector<int>>)> up = [](Node* node, vector<vector<int>> map) { Node* newNode = new Node(*node); int i; for (i = newNode->state[1]; i >= 0; i--) { if (map[i][newNode->state[0]] == 1) {break;}} newNode->state[1] = i+1; return newNode;};
+	function<Node*(Node*, vector<vector<int>>)> right = [](Node* node, vector<vector<int>> map) { Node* newNode = new Node(*node); int i; for (i = newNode->state[0]; i < map[newNode->state[1]].size(); i++) { if (map[newNode->state[1]][i] == 1) {break;}} newNode->state[0] = i-1; return newNode;};
+	function<Node*(Node*, vector<vector<int>>)> down = [](Node* node, vector<vector<int>> map) { Node* newNode = new Node(*node); int i; for (i = newNode->state[1]; i < map.size(); i++) { if (map[i][newNode->state[0]] == 1) {break;}} newNode->state[1] = i-1; return newNode;};
+	function<Node*(Node*, vector<vector<int>>)> left = [](Node* node, vector<vector<int>> map) { Node* newNode = new Node(*node); int i; for (i = newNode->state[0]; i >= 0; i--) { if (map[newNode->state[1]][i] == 1) {break;}} newNode->state[0] = i+1; return newNode;};
 
-	vector<function<Node*(Node*)>> operations = {up, right, down, left};
+	vector<function<Node*(Node*, vector<vector<int>>)>> operations = {up, right, down, left};
 	string operationNames[] = {"up", "right", "down", "left"};
 
-	vector<vector<int>> objective = getObjective();
+	vector<int> start;
+	vector<int> objective;
 
-	Node* rootNode = new Node(N);
+	vector<vector<int>> map = loadMap("map3.txt", start, objective);
+	
+	Node* rootNode = new Node();
+	rootNode->state = start;
 	rootNode->setH(objective);
 
 	vector<Node*> rootRow;
@@ -470,24 +611,26 @@ int main()
 	tree.insert(rootNode);
 
 	Node* result = NULL;
+
+	// printMap(map, rootNode);
 	
 	clock_t time = clock();
 
 	for (int i = 0; i < 1; i++)
 	{
-		// result = breadth(rootRow, objective, operations, operationNames, 0);
-		// result = breadth2(tree, rootRow, objective, operations, operationNames, 0);
+		// result = breadth(rootRow, objective, map, operations, operationNames, 0);
+		// result = breadth2(tree, rootRow, objective, map, operations, operationNames, 0);
 		// result = depth(rootNode, objective, operations, operationNames, 0, 12);
-		// result = greedy(tree, rootNode, objective, operations, operationNames, 0);
-		result = aStar2(objective, operations, operationNames, 0);
+		// result = greedy(rootNode, tree, rootNode, objective, operations, operationNames, 0);
+		result = aStar2(rootNode, objective, map, operations, operationNames, 0);
 	}
-	
+
 	double deltaTime = (double)(clock()-time)/CLOCKS_PER_SEC;
 
 	cout << "\n";
-	printPath(result);
+	printPath3(result, map);
 
-	printf("\nFinished in : %f seconds.\n", deltaTime);
+	printf("\nFinished in %f seconds.\n", deltaTime);
 
 	return 0;
 }
