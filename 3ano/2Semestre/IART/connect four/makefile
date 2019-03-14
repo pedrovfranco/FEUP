@@ -1,8 +1,8 @@
 CXX		 = g++
 CXXFLAGS = -std=c++11 -g
 LDFLAGS  =
-DEPS	 = main.cpp makefile
-OBJFILES = main.o
+DEPS	 = main.cpp node.cpp node.h makefile
+OBJFILES = main.o node.o
 TARGET	 = main
 
 

@@ -1,171 +1,163 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <functional>
+#include <unistd.h>
 
-#define BRDWDTH 7
-#define BRDHGHT 6
+#include "node.h"
 
 using namespace std;
 
+vector<function<Node*(Node*)>> operations;
 
-
-int board[BRDHGHT][BRDWDTH];
-int currPlayer = 1;
-int moveCounter = 0;
-
-
-void initializeBoard()
+void initializeOperations()
 {
-	for (int i = 0; i < BRDHGHT; ++i)
+	for (int i = 0; i < BRDWDTH; ++i)
 	{
-		for (int j = 0; j < BRDWDTH; ++j)
+		function<Node*(Node*)> func = [i](Node* node)
 		{
-			board[i][j] = 0;
-		}
+			Node* newNode = new Node(*node);
+			
+			if (!newNode->play(i))
+			{
+				delete newNode;
+				return (Node*)NULL;
+			}
+
+			newNode->parent = node;
+
+			return newNode;		
+		};
+
+		operations.push_back(func);
 	}
 }
 
-void swapPlayer()
+Node* minimax(Node* currNode, int depth, bool maximizing, vector<function<Node*(Node*)>>& operations)
 {
-	currPlayer = (currPlayer)%2+1;
-	moveCounter++;
-}
+	if (depth == 0)
+		return currNode;
 
-void play(int x)
-{
-	int i;
+	Node* nextNode = new Node();
+	Node* bestNode = NULL;
+	int value;
 
-	for (i = 0; i < BRDHGHT && board[i][x] == 0; ++i)
-	{}
-	i--;
+	if (maximizing)
+	{
+		for (int i = 0; i < operations.size(); i++)
+		{
+			nextNode = operations[i](currNode);
 
-	board[i][x] = currPlayer;
-	swapPlayer();
-}
+			if (nextNode == NULL)
+				continue;
+			else
+				cout << *nextNode << "\n\n";
 
+			nextNode = minimax(nextNode, depth - 1, false, operations);
 
+			if (bestNode == NULL || nextNode->h > bestNode->h)
+				bestNode = nextNode;
+		}
 
-
-int checkWinFour(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4)
-{
-	if (board[y1][x1] != 0 && board[y1][x1] == board[y2][x2] && board[y1][x1] == board[y3][x3] && board[y1][x1] == board[y4][x4])
-		return board[y1][x1];
+		return bestNode;
+	}
 	else
-		return 0;
-}
-
-int checkWinHorizontal()
-{
-	for (int i = 0; i < BRDHGHT; ++i)
 	{
-		for (int j = 0; j < BRDWDTH-3; ++j)
+		for (int i = 0; i < operations.size(); i++)
 		{
-			int win = checkWinFour(j,i, j+1,i, j+2,i, j+3,i);
-			if (win != 0)
-				return win;
-		}
-	}
+			nextNode = operations[i](currNode);
 
-	return 0;
-}
+			if (nextNode == NULL)
+				continue;
 
-int checkWinVertical()
-{
-	for (int i = 0; i < BRDHGHT-3; ++i)
-	{
-		for (int j = 0; j < BRDWDTH; ++j)
-		{
-			int win = checkWinFour(j,i, j,i+1, j,i+2, j,i+3);
-			if (win != 0)
-				return win;
-		}
-	}
-
-	return 0;
-}
-
-int checkWinDownRight()
-{
-	for (int i = 0; i < BRDHGHT-3; ++i)
-	{
-		for (int j = 0; j < BRDWDTH-3; ++j)
-		{
-			int win = checkWinFour(j,i, j,i+1, j,i+2, j,i+3);
-			if (win != 0)
-				return win;
-		}
-	}
-
-	return 0;
-}
-
-int checkWinDownLeft()
-{
-	for (int i = 3; i < BRDHGHT; ++i)
-	{
-		for (int j = 0; j < BRDWDTH-3; ++j)
-		{
-			int win = checkWinFour(j,i, j,i+1, j,i+2, j,i+3);
-			if (win != 0)
-				return win;
-		}
-	}
-
-	return 0;
-}
-
-void displayBoard()
-{
-	for (int i = 0; i < BRDHGHT; ++i)
-	{
-		for (int j = 0; j < BRDWDTH; ++j)
-		{
-			cout << board[i][j] << " ";
+			nextNode = minimax(nextNode, depth - 1, true, operations);
+			
+			if (bestNode == NULL || nextNode->h < bestNode->h)
+				bestNode = nextNode;
 		}
 
-		cout << "\n";
+		return bestNode;
 	}
 }
 
-
-int checkWin()
+void printBoard(vector<vector<int>> board)
 {
-	int horizontal = checkWinHorizontal();
-	if (horizontal != 0)
-		return horizontal;
+	for (int i = 0; i < board.size(); ++i)
+	{
+		cout << "|";
+		for (int j = 0; j < board[i].size(); ++j)
+		{
+			if (board[i][j] == 0)
+				cout << " ";
+			else
+				cout << board[i][j];
 
-	int vertical = checkWinVertical();
-	if (vertical != 0)
-		return vertical;
+			cout << " ";
+		}
 
-	int downright = checkWinDownRight();
-	if (downright != 0)
-		return downright;
+		cout << "|\n";
+	}
 
-	int downleft = checkWinDownLeft();
-	if (downleft != 0)
-		return downleft;
+	cout << " ";
+	for (int i = 0; i < board.size()+1; ++i)
+	{
+		cout << "__";
+	}
+	
+}
 
-	return 0;
+
+void gameLoop()
+{
+	int numPlays;
+	Node* currState = new Node();
+
+	for (numPlays = 0; ; numPlays++)
+	{
+
+		if (numPlays % 2 == 0)
+			cout << "Your turn\n\n";
+		else
+			cout << "Bot's turn\n\n";
+
+		printBoard(currState->state);
+		cout << "\n\n";
+
+		if (numPlays % 2 == 0)
+		{
+			string move;
+
+			cout << "Choose a row: ";
+
+			getline(cin, move);
+
+			currState->play(stoi(move));
+		}
+		else
+		{
+
+			Node* bestMove = minimax(currState, 5, true, operations);
+
+			while (!(*bestMove->parent == *currState))
+			{
+				bestMove = bestMove->parent;
+			}
+
+			currState = bestMove;
+
+			usleep(1000*1000); //Sleeps for 1 second
+		}
+
+	}
 }
 
 
 int main()
 {
+	initializeOperations();
 
-	initializeBoard();
+	gameLoop();
 
-	displayBoard();
-
-	cin.get();
-
-	play(1);
-	displayBoard();
-
-	cin.get();
-
-	play(0);
-	displayBoard();
 
 	return 0;
 }

@@ -6,16 +6,18 @@
 #include <iostream>
 #include <unordered_set>
 
+#define BRDWDTH 7
+#define BRDHGHT 6
+
 using namespace std;
 
 class Node
 {
 public:
-	vector<int> state;
-	
-	int cost = 0;
-	int level;
-	int h = -1;
+	vector<vector<int>> state;
+
+	int cost;
+	int h;
 	int f;
 
 	Node* parent = NULL;
@@ -23,11 +25,19 @@ public:
 
 	Node();
 
-	Node(int n);
-
 	Node(const Node& node);
 
-	void setH(vector<int> objective);
+	void setH();
+
+	int nlinhas4(int player);
+	int checkWinFour(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4);
+
+	int nlinhas3(int player);
+	int checkWinThree(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4);
+
+	int central(int player);
+
+	bool play(int x);
 	
 	bool operator==(const Node* node) const;
 	bool operator==(const Node& node) const;
@@ -40,7 +50,7 @@ public:
 ostream& operator<<(ostream& os, const Node& node);
 
 
-string printState(vector<int> state);
+string printState(vector<vector<int>> state);
 
 
 struct hashNode
