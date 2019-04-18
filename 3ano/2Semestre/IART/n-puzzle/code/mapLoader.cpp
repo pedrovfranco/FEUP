@@ -29,6 +29,13 @@ Node* initiateMap(std::string filename)
 void loadMap(std::string filename, std::vector<std::vector<int>>& map, std::vector<int>& coords)
 {
 	std::ifstream ifs(filename);
+
+	if (ifs.fail())
+	{
+		std::cerr << "Map not found!";
+		exit(1);
+	}
+
 	std::string line, cell;
 	int cellValue;
 
@@ -60,6 +67,8 @@ void loadMap(std::string filename, std::vector<std::vector<int>>& map, std::vect
 
 		map.push_back(row);
 	}
+
+	ifs.close();
 }
 
 

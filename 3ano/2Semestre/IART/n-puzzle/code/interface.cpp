@@ -123,21 +123,16 @@ void agent(std::string map)
 	}
 
 	auto begin = std::chrono::high_resolution_clock::now();
-	int forLimit = 5;
 
-	for (int i = 0; i < forLimit; i++)
-	{
-		if (algorithm == 1) result = breadth(rootNode);
-		else if (algorithm == 2) result = depth(rootNode, 0, limit);
-		else if (algorithm == 3) result = iteDeepening(rootNode, limit);
-		else if (algorithm == 4) result = uniformCost(rootNode);
-		else if (algorithm == 5) result = greedy(tree, rootNode, 0, limit, heuristic);
-		else if (algorithm == 6) result = aStar2(rootNode, heuristic);
-		else if (algorithm == 0) return;
-	}
-
+	if (algorithm == 1) result = breadth(rootNode);
+	else if (algorithm == 2) result = depth(rootNode, 0, limit);
+	else if (algorithm == 3) result = iteDeepening(rootNode, limit);
+	else if (algorithm == 4) result = uniformCost(rootNode);
+	else if (algorithm == 5) result = greedy(tree, rootNode, 0, limit, heuristic);
+	else if (algorithm == 6) result = aStar2(rootNode, heuristic);
+	else if (algorithm == 0) return;
 	
-	double deltaTime = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::high_resolution_clock::now()-begin).count()/(double)1e9/forLimit;
+	double deltaTime = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::high_resolution_clock::now()-begin).count()/(double)1e9;
 
 	std::cout << "\n";
 
