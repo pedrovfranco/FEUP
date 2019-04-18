@@ -36,15 +36,15 @@ void Node::setH(int heuristic)
 			if (heuristic == 0)
 			{
 				if (i != distance[1] || j != distance[0])
-					this->h++;
+					this->h += 1/(double)this->state.size();
 			}
 			else if (heuristic == 1)
 			{
-
-				this->h += distance[0] + distance[1];
+				this->h += (distance[0] + distance[1])/(double)this->state.size();
 			}
 		}
 	}
+
 
 	this->f = this->cost + this->h;
 }

@@ -6,6 +6,8 @@
 #include "mapLoader.h"
 #include "algorithms.h"
 
+using namespace std;
+
 void menu()
 {
 	ui_utilities::ClearScreen();
@@ -17,7 +19,7 @@ void menu()
 	cout << "|          N P U Z Z L E           |" << endl;
 	cout << "|                                  |" << endl;
 	cout << "------------------------------------" << endl;
-	cout << "|      Choose the map to play  !   |" << endl;
+	cout << "|      Choose the map to play !    |" << endl;
 	cout << "------------------------------------" << endl;
 	cout << "| 1 - MAP 1                        |" << endl;
 	cout << "------------------------------------" << endl;
@@ -26,6 +28,8 @@ void menu()
 	cout << "| 3 - MAP 3                        |" << endl;
 	cout << "------------------------------------" << endl;
 	cout << "| 4 - MAP 4                        |" << endl;
+	cout << "------------------------------------" << endl;
+	cout << "| 0 - EXIT                         |" << endl;
 	cout << "------------------------------------" << endl;
 	cout << endl << endl << "Option: ";
 
@@ -41,6 +45,8 @@ void menu()
 			cin >> input;
 		}
 
+	if (input == 0)
+		exit(0);
 
 	if (input != 1)
 		m += std::to_string(input);
@@ -92,7 +98,6 @@ void agent(std::string map)
 	Node* rootNode = initiateMap(map);
 
 	unordered_set<Node*, hashNode, hashNode> tree;
-	tree.insert(rootNode);
 
 	Node* result = NULL;
 	
@@ -117,30 +122,44 @@ void agent(std::string map)
 			heuristic = 0;
 	}
 
-	clock_t time = clock();
+	auto begin = std::chrono::high_resolution_clock::now();
+	int forLimit = 5;
 
-	if (algorithm == 1) result = breadth(rootNode);
-	else if (algorithm == 2) result = depth(rootNode, 0, limit);
-	else if (algorithm == 3) result = iteDeepening(rootNode, limit);
-	else if (algorithm == 4) result = uniformCost(rootNode);
-	else if (algorithm == 5) result = greedy(tree, rootNode, 0, limit, heuristic);
-	else if (algorithm == 6) result = aStar2(rootNode, heuristic);
-	else if (algorithm == 0) return;
+	for (int i = 0; i < forLimit; i++)
+	{
+		if (algorithm == 1) result = breadth(rootNode);
+		else if (algorithm == 2) result = depth(rootNode, 0, limit);
+		else if (algorithm == 3) result = iteDeepening(rootNode, limit);
+		else if (algorithm == 4) result = uniformCost(rootNode);
+		else if (algorithm == 5) result = greedy(tree, rootNode, 0, limit, heuristic);
+		else if (algorithm == 6) result = aStar2(rootNode, heuristic);
+		else if (algorithm == 0) return;
+	}
 
-	double deltaTime = (double)(clock()-time)/CLOCKS_PER_SEC;
+	
+	double deltaTime = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::high_resolution_clock::now()-begin).count()/(double)1e9/forLimit;
 
-	cout << "\n";
+	std::cout << "\n";
 
 	if (result == NULL)
-		cout << "Failed to find solution!";
+		std::cout << "Failed to find solution!";
 	else
 	{
 		printPath(result);
-		cout << "Agent's solution: " << result->cost << " moves.\n";
+		std::cout << "Agent's solution: " << result->cost << " moves.\n";
 	}
 
+	std::cout.setf(std::ios::fixed, std::ios::floatfield);
+	std::cout.precision(4);
 
-	printf("\nFinished in %f seconds.\n", deltaTime);
+	std::cout << "\nFinished in " << deltaTime << " seconds\n";
+
+	std::cin.clear();
+	std::cin.ignore(1000, '\n');
+
+	std::cout << "Press any key to continue...";
+
+	std::cin.get();
 }
 
 

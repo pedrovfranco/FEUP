@@ -168,6 +168,13 @@ Node* greedy(std::unordered_set<Node*, hashNode, hashNode>& tree, Node* currNode
 		return NULL;
 	}
 
+	if (level == 0)
+	{
+		tree.clear();
+		tree.insert(currNode);
+	}
+
+
 	if (DEBUG)
 	{
 		std::cout << *currNode << "\n\n";

@@ -22,8 +22,6 @@ public:
 
 	Node();
 
-	Node(int n);
-
 	Node(const Node& node);
 
 	void setH(int heuristic);

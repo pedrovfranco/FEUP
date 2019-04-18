@@ -9,13 +9,16 @@
 #include "algorithms.h"
 #include "macros.h"
 
-using namespace std;
-
 
 int main()
 {
-	menu();
-	
+	while (true)
+	{
+		menu();
+
+		// std::cin.clear();
+		// std::cin.ignore(1000, '\n');
+	}	
 	
 	return 0;
 }
