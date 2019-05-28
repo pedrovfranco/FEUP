@@ -33,12 +33,12 @@ void initializeOperations()
 	}
 }
 
-Node* minimax(Node* currNode, int depth, bool maximizing, vector<function<Node*(Node*)>>& operations)
+Node* minimax(Node* currNode, int depth, bool maximizing)
 {
 	if (depth == 0)
 		return currNode;
 
-	Node* nextNode = new Node();
+	Node* nextNode = NULL;
 	Node* bestNode = NULL;
 	int value;
 
@@ -50,10 +50,8 @@ Node* minimax(Node* currNode, int depth, bool maximizing, vector<function<Node*(
 
 			if (nextNode == NULL)
 				continue;
-			else
-				cout << *nextNode << "\n\n";
 
-			nextNode = minimax(nextNode, depth - 1, false, operations);
+			nextNode = minimax(nextNode, depth - 1, false);
 
 			if (bestNode == NULL || nextNode->h > bestNode->h)
 				bestNode = nextNode;
@@ -70,7 +68,7 @@ Node* minimax(Node* currNode, int depth, bool maximizing, vector<function<Node*(
 			if (nextNode == NULL)
 				continue;
 
-			nextNode = minimax(nextNode, depth - 1, true, operations);
+			nextNode = minimax(nextNode, depth - 1, true);
 			
 			if (bestNode == NULL || nextNode->h < bestNode->h)
 				bestNode = nextNode;
@@ -109,19 +107,26 @@ void printBoard(vector<vector<int>> board)
 
 void gameLoop()
 {
-	int numPlays;
+	int numPlays, winner;
 	Node* currState = new Node();
 
 	for (numPlays = 0; ; numPlays++)
 	{
+		printBoard(currState->state);
+		cout << "\n\n";
+
+		winner = currState->finished();
+
+		if (winner)
+		{
+			cout << "Winner is " << winner << "\n";
+			return;
+		}
 
 		if (numPlays % 2 == 0)
 			cout << "Your turn\n\n";
 		else
 			cout << "Bot's turn\n\n";
-
-		printBoard(currState->state);
-		cout << "\n\n";
 
 		if (numPlays % 2 == 0)
 		{
@@ -131,12 +136,11 @@ void gameLoop()
 
 			getline(cin, move);
 
-			currState->play(stoi(move));
+			currState = operations[stoi(move)](currState);
 		}
 		else
 		{
-
-			Node* bestMove = minimax(currState, 5, true, operations);
+			Node* bestMove = minimax(currState, 3, true);
 
 			while (!(*bestMove->parent == *currState))
 			{
@@ -148,6 +152,7 @@ void gameLoop()
 			usleep(1000*1000); //Sleeps for 1 second
 		}
 
+		
 	}
 }
 

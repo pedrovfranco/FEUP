@@ -16,9 +16,9 @@ class Node
 public:
 	vector<vector<int>> state;
 
-	int cost;
-	int h;
-	int f;
+	int cost = 0;
+	double h = -1;
+	double f = -1;
 
 	Node* parent = NULL;
 	string operationName = "";
@@ -38,6 +38,8 @@ public:
 	int central(int player);
 
 	bool play(int x);
+
+	int finished();
 	
 	bool operator==(const Node* node) const;
 	bool operator==(const Node& node) const;

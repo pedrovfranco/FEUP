@@ -23,8 +23,8 @@ Node::Node(const Node& node)
 
 void Node::setH()
 {
-	int currplayer = (this->cost % 2) + 1;
-	int nextPlayer = ((this->cost+1) % 2) + 1;
+	int currplayer = 2;
+	int nextPlayer = 1;
 
 	int fav1 = nlinhas4(currplayer) - nlinhas4(nextPlayer);
 	int fav2 = 100*fav1 + nlinhas3(currplayer) - nlinhas3(nextPlayer);
@@ -180,13 +180,13 @@ int Node::central(int player)
 
 	for (int i = 0; i < BRDHGHT; ++i)
 	{
-		if (this->state[i][4] == player)
+		if (this->state[i][3] == player)
 			counter += 2;
 
-		if (this->state[i][3] == player)
+		if (this->state[i][2] == player)
 			counter++;
 
-		if (this->state[i][5] == player)
+		if (this->state[i][4] == player)
 			counter++;
 	}
 
@@ -201,7 +201,7 @@ bool Node::play(int x)
 	i--;
 
 	if (i == -1)
-		return false;;
+		return false;
 
 	this->state[i][x] = (this->cost % 2) + 1;
 
@@ -211,6 +211,17 @@ bool Node::play(int x)
 	this->operationName = to_string(x);
 
 	return true;
+}
+
+int Node::finished()
+{
+	for (int i = 1; i <= 2; ++i)
+	{
+		if (nlinhas4(i) > 0)
+			return i;
+	}
+
+	return 0;
 }
 
 
