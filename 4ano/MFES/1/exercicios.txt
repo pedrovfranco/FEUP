@@ -1,0 +1,116 @@
+1) 
+	a)
+		true
+
+	b)
+		x < 6
+		x+1 < 6 (x := x + 1)
+		x+1 -1 < 6 -1
+		x < 5 != x > 5
+		false
+
+	c)
+		x = 5 ∧ y = 0
+		x > 0 (true) then y:= 10
+		x = 5 ^ y = 10
+		y = 10
+		true
+
+	d)
+		x = a ∧ y = b
+		x := y; y := a
+		x = b ^ y = a
+		true
+
+	e)
+		x > y
+		while x > y do x := x - 1
+		x = y 
+		true
+
+2)
+	a)
+		{x > 5} ? {x > 0}
+		{x > 5} skip {x > 0}
+
+	b)
+		{?} x := x + 1 {x > 5}
+		{x > 4} x := x + 1 {x > 5}
+
+	c)
+		{x = 5 ∧ y = 0} if x > 0 then y := 10 else skip {?}
+		{x = 5 ∧ y = 0} if x > 0 then y := 10 else skip {y = 10}
+
+	d)
+		{?} while x > y do x := x - 1 {x = y}
+		{x >= y} while x > y do x := x - 1 {x = y}
+
+3)
+	a)
+		R1 ^ R6
+		P => WP(C, Q)
+
+		P => x > 0
+		x > 5 => x > 0, therefore true
+
+	b)
+		R2 ^ R6
+
+		P => Q[E/x]
+		x < 6 => x+1 > 5
+		x < 6 => x > 4
+		false
+
+	c)
+		R4
+
+
+		{P} if C then S else T {Q}
+		{x = 5 ∧ y = 0} if x > 0 then y := 10 else skip {y = 10}
+
+		{P ^ C} S {Q} ^ {P ^ !C} T {Q}
+
+		{P ^ C} S {Q}
+		{x = 5 ^ y = 0 ^ x > 0} y := 10 {y = 10}
+		P => WP(S, Q)
+		x = 5 ^ y = 0 ^ x > 0 => true
+		true
+
+		{P ^ !C} T {Q}
+		{x = 5 ^ y = 0 ^ x <= 0} skip {y = 10}
+		P => 
+		x = 5 ^ y = 0 ^ x <= 0 => WP(T, Q)
+		false => WP(T, Q)
+		true
+
+		true ^ true
+		true
+
+	d)
+		R3
+
+		{x = a ∧ y = b} x := y; y := a {x = b ∧ y = a}
+		{P} S; T {Q}
+
+		{P} S {M} ^ {M} T {Q}
+		M := WP(T, Q)
+		M := x = b
+
+		{P} S {M}
+		P => WP(S, M)
+		P => true
+		true
+
+		{M} T {Q}
+		M => WP(T, Q)
+		x = b => x = b
+		true
+
+		true ^ true
+		true
+
+	e)
+		{x > y} while x > y do x := x -1 {x = y}
+		{P} while C do S {Q}
+		I := x >= y
+		V := x-y
